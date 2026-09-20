@@ -1,87 +1,138 @@
-# 🌐 ProfoLink — Kishore Anand S | Developer Portfolio
+<div align="center">
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-kishore--anand--portfolio.vercel.app-00f0ff?style=for-the-badge&logo=vercel)](https://kishore-anand-portfolio.vercel.app)
-[![GitHub](https://img.shields.io/badge/GitHub-kishoreanands-181717?style=for-the-badge&logo=github)](https://github.com/kishoreanands)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-kishoreanandsivakumar-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/kishoreanandsivakumar)
-[![LeetCode](https://img.shields.io/badge/LeetCode-kishoreanandsivakumar-FFA116?style=for-the-badge&logo=leetcode)](https://leetcode.com/u/kishoreanandsivakumar/)
+  <img src="assets/banner.svg" alt="Kishore Anand S Banner" width="100%" />
 
-A personal portfolio web application designed with cyber-tech aesthetics, glassmorphism, responsive navigation, dynamic micro-interactions, and real-time contact dispatch.
+  <br><br>
 
----
+  <a href="https://kishore-anand-portfolio.vercel.app">
+    <img src="https://img.shields.io/badge/LIVE%20DEMO-VISIT%20PORTFOLIO-00f2fe?style=for-the-badge&logo=vercel&logoColor=black" alt="Live Portfolio Demo" />
+  </a>
+  &nbsp;
+  <a href="https://www.linkedin.com/in/kishoreanandsivakumar">
+    <img src="https://img.shields.io/badge/LINKEDIN-CONNECT-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  &nbsp;
+  <a href="https://leetcode.com/u/kishoreanandsivakumar/">
+    <img src="https://img.shields.io/badge/LEETCODE-PROBLEMS-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode" />
+  </a>
+  &nbsp;
+  <a href="https://github.com/kishoreanands">
+    <img src="https://img.shields.io/badge/GITHUB-PROFILE-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  </a>
 
-## 🔗 Live URLs
+  <br><br>
 
-- **Live Deployed Portfolio**: [https://kishore-anand-portfolio.vercel.app](https://kishore-anand-portfolio.vercel.app)
-- **GitHub Repository**: [https://github.com/kishoreanands/Kishore-Anand-portfolio](https://github.com/kishoreanands/Kishore-Anand-portfolio)
+  <p align="center">
+    <strong>Crafting robust software solutions, embedded IoT architectures, and VLSI chip systems.</strong>
+    <br>
+    Electronics & Communication Engineering undergraduate at <strong>VSB Engineering College, Karur</strong>.
+  </p>
 
----
-
-## ✨ Key Features
-
-- **Constellation Particle System**: Custom HTML5 Canvas script rendering reactive particles and circuit-like interconnects.
-- **Cyber-Tech Glassmorphism Design**: Handcrafted Vanilla CSS with CSS custom properties, neon glow gradients, and modern typography (`Outfit`, `Inter`, `Fira Code`).
-- **Interactive Role Typing Animation**: Dynamic typewriter banner cycling through Kishore's core engineering specializations.
-- **Executive Profile & Resume Modal**: Interactive credential modal with high-contrast `@media print` support allowing one-click **Print / Save as PDF** resume formatting.
-- **Filterable Engineering Projects**: Dynamic multi-category filter (`Hardware & IoT`, `Software & AI`) with modal architecture walkthroughs.
-- **Developer Metrics & Platform Integration**: Real-time dev stats showcasing GitHub, LeetCode, and HackerRank achievements.
-- **Academics & Industry Certifications**: Timeline display of B.E. in Electronics & Communication Engineering at VSB Engineering College and verified certifications from GUVI/HCL (Java), Infosys Springboard (AI), and Maven Silicon (VLSI).
-- **Direct Email Dispatch**: Contact form integrated with automated email dispatch and client-side mailto fallback.
-
----
-
-## 🛠️ Tech Stack
-
-| Category | Technology |
-|---|---|
-| **Structure** | HTML5 (Semantic, SEO-Optimized) |
-| **Styling** | Vanilla CSS3 (Custom Design System, Glassmorphism, Print Media Queries) |
-| **Logic & Interactivity** | Pure JavaScript ES6+ (Canvas Particle Engine, IntersectionObserver, 3D Tilt) |
-| **Icons & Typography** | FontAwesome 6, Google Fonts (`Outfit`, `Inter`, `Fira Code`) |
-| **Hosting & Deployment** | Vercel (Continuous Deployment from GitHub `main`) |
+</div>
 
 ---
 
-## 📁 Project Structure
+### ⚡ System Profile
 
-```text
-profolink/
-├── index.html            # Primary semantic structure & layout
-├── styles.css            # Complete cyber-tech design system & print styles
-├── script.js             # Interactive particles, modals, typing effect & forms
-├── css/
-│   └── style.css         # Modular portfolio styles & theme tokens
-├── js/
-│   ├── app.js            # Modular application UI & scroll interactions
-│   └── background.js     # Background animation logic
-├── .gitignore            # Git ignore configuration
-└── README.md             # Project documentation & live links
+```java
+public class DeveloperProfile {
+    String engineer       = "Kishore Anand S";
+    String degree         = "B.E. Electronics & Communication Engineering";
+    String almaMater      = "VSB Engineering College, Karur (2023–Present)";
+    double academicCGPA   = 7.6;
+    String location       = "Krishnagiri, Tamil Nadu, India";
+
+    // Core Focus Areas
+    String[] coreFocus = {
+        "Core Java & Object-Oriented Design",
+        "Data Structures & Algorithm Optimization",
+        "VLSI Chip Design & Digital Electronics",
+        "EV Battery Management Systems (BMS)",
+        "IoT Sensor Automation & Embedded Firmware"
+    };
+
+    public boolean isReadyToContribute() {
+        return true; // Available for software engineering & hardware tech roles
+    }
+}
 ```
 
 ---
 
-## 🚀 Local Development
+### 🚀 Featured Engineering Innovations
 
-To run or preview this portfolio locally:
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/kishoreanands/Kishore-Anand-portfolio.git
-   cd Kishore-Anand-portfolio
-   ```
-
-2. **Open in browser:**
-   Double-click `index.html` or open via VS Code Live Server.
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <h4 align="center">💧 Municipal Water Flow Control</h4>
+      <p align="center"><em>IoT / Embedded Automation</em></p>
+      <ul>
+        <li>Integrated flow sensor network for automated municipal water monitoring.</li>
+        <li>Instant leak and abnormal flow detection with automated cut-off.</li>
+        <li>Usage tracking and automated billing reports to eliminate wastage.</li>
+      </ul>
+    </td>
+    <td width="33%" valign="top">
+      <h4 align="center">🔋 EV Battery Management System</h4>
+      <p align="center"><em>EV Hardware & BMS</em></p>
+      <ul>
+        <li>Real-time multi-cell voltage, current, and SoC temperature monitoring.</li>
+        <li>Dynamic regenerative braking energy recovery loop.</li>
+        <li>Over-voltage, thermal runaway, and deep-discharge safety protection.</li>
+      </ul>
+    </td>
+    <td width="33%" valign="top">
+      <h4 align="center">🧠 EduAI Smart Assistant</h4>
+      <p align="center"><em>Adaptive AI & Web Tech</em></p>
+      <ul>
+        <li>Personalized study recommendations and interactive query resolution.</li>
+        <li>Automated quiz and concept card generation from lecture notes.</li>
+        <li>Real-time learning velocity and student progress analytics.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 ---
 
-## 📬 Contact & Connect
+### 🏆 Verified Industry Credentials
 
-- **Name**: Kishore Anand S
-- **Email**: [kishoreanand876@gmail.com](mailto:kishoreanand876@gmail.com)
-- **Phone**: [+91 93633 27557](tel:+919363327557)
-- **Location**: Krishnagiri, Tamil Nadu, India
-- **Institution**: VSB Engineering College, Karur
+- ☕ **Java Programming** &bull; *GUVI | HCL (2024)* &mdash; Core Java OOP, memory management, and application development.
+- 🤖 **Artificial Intelligence** &bull; *Infosys Springboard (2025)* &mdash; AI concepts, intelligent systems, and machine learning foundations.
+- 🔬 **VLSI Chip Design** &bull; *Maven Silicon (2026)* &mdash; RTL design, digital system architecture, and chip fabrication workflows.
 
 ---
 
-*Crafted with precision & cyber-tech aesthetics.*
+### 🎓 Academic Background
+
+- **Bachelor of Engineering in ECE** &bull; VSB Engineering College, Karur *(2023 – Present)* &mdash; **CGPA: 7.6**
+- **Higher Secondary Certificate (HSC)** &bull; Marutham Matric Hr. Sec. School *(2023)* &mdash; **76.1%**
+- **Secondary School Leaving Certificate (SSLC)** &bull; Marutham Matric Hr. Sec. School *(2021)* &mdash; **Pass**
+
+---
+
+<div align="center">
+
+  ### 📬 Connect with Kishore
+
+  <a href="mailto:kishoreanand876@gmail.com">
+    <img src="https://img.shields.io/badge/EMAIL-kishoreanand876%40gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+  &nbsp;
+  <a href="tel:+919363327557">
+    <img src="https://img.shields.io/badge/PHONE-%2B91%2093633%2027557-25D366?style=flat-square&logo=whatsapp&logoColor=white" alt="Phone" />
+  </a>
+  &nbsp;
+  <a href="https://www.linkedin.com/in/kishoreanandsivakumar">
+    <img src="https://img.shields.io/badge/LINKEDIN-Profile-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  &nbsp;
+  <a href="https://hackerrank.com/profile/kishoreanands">
+    <img src="https://img.shields.io/badge/HACKERRANK-kishoreanands-2EC866?style=flat-square&logo=hackerrank&logoColor=white" alt="HackerRank" />
+  </a>
+
+  <br><br>
+
+  <sub>⚡ Designed with Cyber-Tech Aesthetics &bull; Deployed continuously via <a href="https://vercel.com">Vercel</a> &bull; © 2026 Kishore Anand S</sub>
+
+</div>
