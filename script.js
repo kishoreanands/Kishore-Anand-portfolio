@@ -1,357 +1,247 @@
 /* ==========================================================================
-   KISHORE ANAND S - PORTFOLIO INTERACTIVE SCRIPT
-   Features: Particle Canvas, Interactive Cards, Project Modals, Scroll Handling
+   KISHORE ANAND S - PORTFOLIO INTERACTIVITY SCRIPT
+   Style Reference: https://nishwapandiyan.github.io/Portfolio/
+   Features: Theme Switcher, Mobile Nav, Scroll Spy, Swiper, Modals & Forms
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // --- 1. Background Particle & Constellation Canvas ---
-  const canvas = document.getElementById('particle-canvas');
-  if (canvas) {
-    const ctx = canvas.getContext('2d');
-    let width, height;
-    let particles = [];
 
-    function resizeCanvas() {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
+  // ================= 1. THEME SWITCHER (DARK / LIGHT MODE) =================
+  const darkModeIcon = document.getElementById('dark-mode');
+  const savedTheme = localStorage.getItem('theme');
+
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark');
+    if (darkModeIcon) {
+      darkModeIcon.classList.remove('fa-moon');
+      darkModeIcon.classList.add('fa-sun');
     }
-
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    class Particle {
-      constructor() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        this.size = Math.random() * 2 + 0.5;
-        this.vx = (Math.random() - 0.5) * 0.4;
-        this.vy = (Math.random() - 0.5) * 0.4;
-        this.color = Math.random() > 0.4 ? 'rgba(0, 242, 254, ' : 'rgba(157, 78, 221, ';
-        this.alpha = Math.random() * 0.5 + 0.2;
-      }
-
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-
-        if (this.x < 0) this.x = width;
-        if (this.x > width) this.x = 0;
-        if (this.y < 0) this.y = height;
-        if (this.y > height) this.y = 0;
-      }
-
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = this.color + this.alpha + ')';
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = 'rgba(0, 242, 254, 0.5)';
-        ctx.fill();
-        ctx.shadowBlur = 0;
-      }
-    }
-
-    const particleCount = Math.min(Math.floor(window.innerWidth / 18), 70);
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
-    }
-
-    function animateParticles() {
-      ctx.clearRect(0, 0, width, height);
-
-      // Draw connecting circuit lines
-      for (let i = 0; i < particles.length; i++) {
-        particles[i].update();
-        particles[i].draw();
-
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < 130) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(0, 242, 254, ${0.15 * (1 - dist / 130)})`;
-            ctx.lineWidth = 0.6;
-            ctx.stroke();
-          }
-        }
-      }
-      requestAnimationFrame(animateParticles);
-    }
-
-    animateParticles();
   }
 
-  // --- 2. Dynamic Navbar & Scroll Progress Bar ---
+  darkModeIcon?.addEventListener('click', () => {
+    const isDark = document.body.classList.toggle('dark');
+    darkModeIcon.classList.toggle('fa-moon', !isDark);
+    darkModeIcon.classList.toggle('fa-sun', isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+
+  // ================= 2. MOBILE NAVBAR TOGGLE =================
+  const menuIcon = document.getElementById('menu-icon');
   const navbar = document.querySelector('.navbar');
-  const progressBar = document.querySelector('.scroll-progress-bar');
-  const backToTopBtn = document.getElementById('backToTop');
+
+  menuIcon?.addEventListener('click', () => {
+    menuIcon.classList.toggle('fa-bars');
+    menuIcon.classList.toggle('fa-xmark');
+    navbar.classList.toggle('active');
+  });
+
+  document.querySelectorAll('.navbar a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuIcon?.classList.add('fa-bars');
+      menuIcon?.classList.remove('fa-xmark');
+      navbar?.classList.remove('active');
+    });
+  });
+
+  // ================= 3. SCROLL SPY & STICKY HEADER =================
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('header nav a');
+  const header = document.querySelector('.header');
 
   window.addEventListener('scroll', () => {
-    // Scroll progress
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    if (progressBar) progressBar.style.width = scrolled + '%';
+    const top = window.scrollY;
 
-    // Navbar Scrolled Glass effect
-    if (window.scrollY > 40) {
-      navbar?.classList.add('scrolled');
-    } else {
-      navbar?.classList.remove('scrolled');
-    }
+    sections.forEach(sec => {
+      const offset = sec.offsetTop - 160;
+      const height = sec.offsetHeight;
+      const id = sec.getAttribute('id');
 
-    // Back to top button visibility
-    if (window.scrollY > 500) {
-      backToTopBtn?.classList.add('visible');
-    } else {
-      backToTopBtn?.classList.remove('visible');
-    }
-  });
-
-  backToTopBtn?.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  // --- 3. Mobile Navigation Menu Toggle ---
-  const mobileToggle = document.getElementById('mobileToggle');
-  const navLinks = document.getElementById('navLinks');
-
-  if (mobileToggle && navLinks) {
-    mobileToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      const icon = mobileToggle.querySelector('i');
-      if (icon) {
-        if (navLinks.classList.contains('active')) {
-          icon.classList.remove('fa-bars');
-          icon.classList.add('fa-xmark');
-        } else {
-          icon.classList.remove('fa-xmark');
-          icon.classList.add('fa-bars');
-        }
+      if (top >= offset && top < offset + height) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const activeLink = document.querySelector(`header nav a[href*=${id}]`);
+        if (activeLink) activeLink.classList.add('active');
       }
     });
 
-    // Close menu when clicking link
-    navLinks.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        const icon = mobileToggle.querySelector('i');
-        if (icon) {
-          icon.classList.remove('fa-xmark');
-          icon.classList.add('fa-bars');
+    if (header) {
+      header.classList.toggle('sticky', top > 80);
+    }
+  });
+
+  // ================= 4. ABOUT SECTION READ MORE TOGGLE =================
+  const readMoreBtn = document.getElementById('readMoreBtn');
+  const moreText = document.getElementById('moreText');
+
+  readMoreBtn?.addEventListener('click', () => {
+    const isShowing = moreText.classList.toggle('show');
+    readMoreBtn.textContent = isShowing ? 'Read Less' : 'Read More';
+  });
+
+  // ================= 5. SWIPER CREDENTIALS SLIDER =================
+  if (typeof Swiper !== 'undefined') {
+    new Swiper('.mySwiper', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      grabCursor: true,
+      loop: true,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 1,
         }
-      });
+      }
     });
   }
 
-  // --- 4. IntersectionObserver for Active Nav Link & Skill Bars ---
-  const sections = document.querySelectorAll('section[id]');
-  const navLinkElems = document.querySelectorAll('.nav-link');
-
-  const observerOptions = {
-    root: null,
-    rootMargin: '-20% 0px -60% 0px',
-    threshold: 0
-  };
-
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const currentId = entry.target.getAttribute('id');
-        navLinkElems.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${currentId}`) {
-            link.classList.add('active');
-          }
-        });
-      }
-    });
-  }, observerOptions);
-
-  sections.forEach(sec => sectionObserver.observe(sec));
-
-  // Skill Bar Progress Animation on Scroll
-  const skillBars = document.querySelectorAll('.skill-progress');
-  const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const targetWidth = entry.target.getAttribute('data-level');
-        entry.target.style.width = targetWidth + '%';
-        skillObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-
-  skillBars.forEach(bar => skillObserver.observe(bar));
-
-  // --- 5. Typing Effect in Hero Section ---
-  const typingElem = document.getElementById('typing-text');
-  if (typingElem) {
-    const roles = [
-      'Electronics & Communication Undergraduate',
-      'Aspiring Java Developer',
-      'Web Developer',
-      'VLSI & Embedded Systems Enthusiast'
-    ];
-    let roleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typingSpeed = 70;
-
-    function typeEffect() {
-      const currentRole = roles[roleIndex];
-
-      if (isDeleting) {
-        typingElem.textContent = currentRole.substring(0, charIndex - 1);
-        charIndex--;
-        typingSpeed = 35;
-      } else {
-        typingElem.textContent = currentRole.substring(0, charIndex + 1);
-        charIndex++;
-        typingSpeed = 70;
-      }
-
-      if (!isDeleting && charIndex === currentRole.length) {
-        isDeleting = true;
-        typingSpeed = 1800; // Pause at top
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        typingSpeed = 400;
-      }
-
-      setTimeout(typeEffect, typingSpeed);
-    }
-
-    typeEffect();
-  }
-
-  // --- 6. Interactive Project Filter Tabs ---
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card-wrapper');
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filter = btn.getAttribute('data-filter');
-
-      projectCards.forEach(card => {
-        const cat = card.getAttribute('data-category');
-        if (filter === 'all' || cat === filter) {
-          card.style.display = 'block';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0) scale(1)';
-          }, 50);
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(10px) scale(0.96)';
-          setTimeout(() => {
-            card.style.display = 'none';
-          }, 300);
-        }
-      });
-    });
-  });
-
-  // --- 7. Project Modal Popup Functionality ---
+  // ================= 6. MODALS LOGIC =================
   const modalData = {
+    // Project Modals
     water: {
       title: 'Automated Municipal Water Flow Control Using Flow Sensor',
-      category: 'Hardware & IoT / Embedded Systems',
-      description: 'Designed an IoT-based municipal water management system using sensors for real-time water monitoring and automated usage tracking.',
+      category: 'IoT & Hardware Automation',
+      description: 'An automated IoT municipal water distribution and conservation platform engineered to eliminate water waste, monitor consumption telemetry, and prevent unauthorized usage.',
       features: [
-        'Real-time flow monitoring using high-precision water flow sensors.',
-        'Automated abnormal flow & leak detection with instant shut-off capability.',
-        'Automated usage tracking and real-time billing generation with detailed reports.',
-        'Significantly reduces municipal water wastage through automated valve control.'
+        'Real-time water flow telemetry using high-precision Hall-effect flow sensors.',
+        'Automatic abnormal pressure and leak detection with instant valve shut-off.',
+        'Automated digital usage tracking and real-time billing generation.',
+        'Significantly reduces municipal distribution losses and optimizes water equity.'
       ],
-      tech: ['IoT', 'Flow Sensors', 'Embedded Systems', 'Automated Billing']
+      tags: ['IoT', 'Flow Sensors', 'Embedded Systems', 'Automated Billing']
     },
     bms: {
       title: 'Battery Management System (BMS) for EV Vehicles with Regenerative Charging',
-      category: 'Hardware & EV Technology',
-      description: 'Developed a Battery Management System aimed at enhancing battery safety, cell monitoring, and energy efficiency in Electric Vehicles.',
+      category: 'EV Hardware & Safety Systems',
+      description: 'An advanced Battery Management System tailored for Electric Vehicles to ensure cell safety, accurate state-of-charge calculation, and dynamic regenerative energy recapture.',
       features: [
-        'Precise cell voltage, temperature, and current state-of-charge (SoC) monitoring.',
-        'Integrated regenerative braking energy harvesting to recharge battery pack dynamically.',
-        'Over-charge, over-discharge, and thermal runaway safety cut-off mechanisms.',
-        'Extends operational battery life cycle and overall vehicle driving efficiency.'
+        'Precise cell voltage, current, temperature, and State-of-Charge (SoC) telemetry.',
+        'Integrated regenerative braking kinetic energy recapture circuit.',
+        'Automated protection cut-offs against over-charging, thermal runaway, and deep discharge.',
+        'Significantly extends overall vehicle driving range and battery lifecycle.'
       ],
-      tech: ['Embedded Systems', 'Regenerative Charging', 'EV Technology', 'Cell Monitoring']
+      tags: ['Embedded Systems', 'Regenerative Charging', 'EV Technology', 'Cell Monitoring']
     },
     eduai: {
       title: 'EduAI – Smart Learning Assistant',
-      category: 'Software & Artificial Intelligence',
-      description: 'Developed an AI-powered smart learning platform designed to assist students with personalized study recommendations, automated quiz generation, and progress tracking.',
+      category: 'Artificial Intelligence & Web Application',
+      description: 'An AI-powered adaptive learning assistant platform designed to accelerate student learning efficiency through personalized study recommendations and dynamic quizzes.',
       features: [
-        'Personalized adaptive learning pathways based on individual student performance.',
-        'Automated quiz and flashcard generation from study notes.',
-        'Interactive query resolution assistant for instant academic doubt clearing.',
-        'Real-time analytics dashboard to visualize student learning velocity and progress.'
+        'Adaptive study pathway recommendation engine tailored to student learning velocity.',
+        'Automated concept quiz and flashcard generation directly from study materials.',
+        'Interactive AI academic doubt resolution assistant.',
+        'Visual progress tracking dashboard with learning analytics.'
       ],
-      tech: ['AI', 'Machine Learning', 'Web Technologies', 'Adaptive Learning']
+      tags: ['AI', 'Machine Learning', 'Web Technologies', 'Adaptive Learning']
+    },
+    // Specialization Modals
+    java: {
+      title: 'Java & Software Engineering Focus',
+      category: 'Core Competency',
+      description: 'Focused software engineering practice building scalable, structured applications using modern Java development standards.',
+      features: [
+        'Object-oriented principles, design patterns, and clean code practices.',
+        'Data structures and algorithm optimization (actively practicing on LeetCode & HackerRank).',
+        'Relational database design and integration using MySQL.',
+        'Backend server workflows and RESTful architecture basics.'
+      ],
+      tags: ['Core Java', 'OOP', 'Data Structures', 'MySQL', 'Problem Solving']
+    },
+    vlsi: {
+      title: 'VLSI & Chip Design Focus',
+      category: 'Hardware Engineering',
+      description: 'Specialized digital circuit engineering and semiconductor workflow training certified by Maven Silicon.',
+      features: [
+        'Digital electronics foundations and combinational/sequential logic design.',
+        'Hardware description modeling with Verilog HDL.',
+        'RTL synthesis, simulation, and timing verification fundamentals.',
+        'Industry semiconductor fabrication and chip design flow knowledge.'
+      ],
+      tags: ['VLSI', 'Verilog HDL', 'RTL Design', 'Digital Logic', 'Maven Silicon']
+    },
+    iot: {
+      title: 'IoT & Municipal Flow Automation Focus',
+      category: 'Embedded & Smart Infrastructure',
+      description: 'Developing responsive hardware-to-cloud IoT architectures that solve real municipal and resource conservation problems.',
+      features: [
+        'Microcontroller interfacing with flow and environmental sensors.',
+        'Actuator and solenoid valve control circuits for automated intervention.',
+        'Usage data telemetry and cloud analytics integration.',
+        'Low-power embedded systems firmware design.'
+      ],
+      tags: ['IoT', 'Microcontrollers', 'Flow Automation', 'Smart Cities']
     }
   };
 
-  const modalBackdrop = document.getElementById('projectModal');
+  const detailsModal = document.getElementById('detailsModal');
   const modalCloseBtn = document.getElementById('modalCloseBtn');
   const modalTitle = document.getElementById('modalTitle');
   const modalCategory = document.getElementById('modalCategory');
-  const modalDesc = document.getElementById('modalDesc');
+  const modalDescription = document.getElementById('modalDescription');
   const modalFeatures = document.getElementById('modalFeatures');
-  const modalTechTags = document.getElementById('modalTechTags');
+  const modalTags = document.getElementById('modalTags');
 
-  document.querySelectorAll('.btn-details').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+  function openDetailsModal(key) {
+    const data = modalData[key];
+    if (!data || !detailsModal) return;
+
+    modalTitle.textContent = data.title;
+    modalCategory.textContent = data.category;
+    modalDescription.textContent = data.description;
+
+    modalFeatures.innerHTML = '';
+    data.features.forEach(f => {
+      const li = document.createElement('li');
+      li.textContent = f;
+      modalFeatures.appendChild(li);
+    });
+
+    modalTags.innerHTML = '';
+    data.tags.forEach(t => {
+      const span = document.createElement('span');
+      span.className = 'tag';
+      span.textContent = t;
+      modalTags.appendChild(span);
+    });
+
+    detailsModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDetailsModal() {
+    detailsModal?.classList.remove('open');
+    document.body.style.overflow = 'auto';
+  }
+
+  document.querySelectorAll('.btn-project-details').forEach(btn => {
+    btn.addEventListener('click', () => {
       const key = btn.getAttribute('data-project');
-      const data = modalData[key];
-
-      if (data && modalBackdrop) {
-        modalTitle.textContent = data.title;
-        modalCategory.textContent = data.category;
-        modalDesc.textContent = data.description;
-
-        modalFeatures.innerHTML = '';
-        data.features.forEach(feat => {
-          const li = document.createElement('li');
-          li.innerHTML = `<i class="fa-solid fa-circle-check"></i> ${feat}`;
-          modalFeatures.appendChild(li);
-        });
-
-        modalTechTags.innerHTML = '';
-        data.tech.forEach(t => {
-          const span = document.createElement('span');
-          span.className = 'tech-tag';
-          span.textContent = t;
-          modalTechTags.appendChild(span);
-        });
-
-        modalBackdrop.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      }
+      openDetailsModal(key);
     });
   });
 
-  function closeModal() {
-    if (modalBackdrop) {
-      modalBackdrop.classList.remove('open');
-      document.body.style.overflow = 'auto';
-    }
-  }
-
-  modalCloseBtn?.addEventListener('click', closeModal);
-  modalBackdrop?.addEventListener('click', (e) => {
-    if (e.target === modalBackdrop) closeModal();
+  document.querySelectorAll('.btn-service-details').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.getAttribute('data-modal');
+      openDetailsModal(key);
+    });
   });
 
-  // --- 7b. Profile Resume Modal Popup Functionality ---
+  modalCloseBtn?.addEventListener('click', closeDetailsModal);
+  detailsModal?.addEventListener('click', (e) => {
+    if (e.target === detailsModal) closeDetailsModal();
+  });
+
+  // --- Profile / CV Modal ---
   const profileModal = document.getElementById('profileModal');
   const openProfileBtn = document.getElementById('openProfileModalBtn');
   const closeProfileBtn = document.getElementById('profileModalCloseBtn');
@@ -385,36 +275,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      if (modalBackdrop?.classList.contains('open')) closeModal();
-      if (profileModal?.classList.contains('open')) closeProfileModal();
+      closeDetailsModal();
+      closeProfileModal();
     }
   });
 
-  // --- 8. Contact Form Handling (Automated Direct Email Delivery) ---
+  // ================= 7. CONTACT FORM SUBMISSION =================
   const contactForm = document.getElementById('contactForm');
   const toast = document.getElementById('toast');
 
   contactForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const nameInput = document.getElementById('userName');
-    const emailInput = document.getElementById('userEmail');
-    const subjectInput = document.getElementById('subject');
-    const messageInput = document.getElementById('message');
+    const name = document.getElementById('userName')?.value.trim();
+    const email = document.getElementById('userEmail')?.value.trim();
+    const phone = document.getElementById('userPhone')?.value.trim() || 'N/A';
+    const subject = document.getElementById('subject')?.value.trim() || 'Portfolio Inquiry';
+    const message = document.getElementById('message')?.value.trim();
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     const originalText = submitBtn.innerHTML;
-
-    const name = nameInput ? nameInput.value.trim() : '';
-    const email = emailInput ? emailInput.value.trim() : '';
-    const subject = subjectInput ? subjectInput.value.trim() : 'Portfolio Inquiry';
-    const message = messageInput ? messageInput.value.trim() : '';
 
     if (!name || !email || !message) {
       alert('Please fill out all required fields.');
       return;
     }
 
-    submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Sending Email...`;
+    submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Sending...`;
     submitBtn.disabled = true;
 
     try {
@@ -427,7 +313,8 @@ document.addEventListener('DOMContentLoaded', () => {
         body: JSON.stringify({
           name: name,
           email: email,
-          _subject: `ProfoLink Message from ${name}: ${subject}`,
+          phone: phone,
+          _subject: `Portfolio Message from ${name}: ${subject}`,
           message: message,
           _template: 'table',
           _captcha: 'false'
@@ -435,61 +322,34 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (response.ok) {
-        submitBtn.innerHTML = `<i class="fa-solid fa-check"></i> Sent to Kishore!`;
-        submitBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-
-        if (toast) {
-          const toastText = toast.querySelector('span');
-          if (toastText) toastText.textContent = 'Message sent directly to Kishore Anand’s email!';
-          toast.classList.add('show');
-          setTimeout(() => toast.classList.remove('show'), 5000);
-        }
-
+        showToast('Message sent directly to Kishore Anand’s email!');
         contactForm.reset();
       } else {
-        throw new Error('Form submission response not OK');
+        throw new Error('Server returned non-200 status');
       }
     } catch (err) {
-      console.warn('Direct API submission encountered network issue, activating client mailto fallback...', err);
-      submitBtn.innerHTML = `<i class="fa-solid fa-envelope-open-text"></i> Opening Mail Client...`;
-      const mailtoUrl = `mailto:kishoreanand876@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+      console.warn('Network issue with direct API dispatch, triggering mailto client fallback...', err);
+      const mailtoUrl = `mailto:kishoreanand876@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`)}`;
       window.location.href = mailtoUrl;
-
-      if (toast) {
-        const toastText = toast.querySelector('span');
-        if (toastText) toastText.textContent = 'Opening your email client to complete sending...';
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 5000);
-      }
+      showToast('Opening your email client to send message...');
       contactForm.reset();
     } finally {
       setTimeout(() => {
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
-        submitBtn.style.background = '';
-      }, 4000);
+      }, 3000);
     }
   });
 
-  // --- 9. 3D Tilt Effect on Glass Cards ---
-  const tiltCards = document.querySelectorAll('.glass-card');
-  tiltCards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+  function showToast(msg) {
+    if (toast) {
+      const toastSpan = toast.querySelector('span');
+      if (toastSpan) toastSpan.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4000);
+    }
+  }
 
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const rotateX = (y - centerY) / 20;
-      const rotateY = (centerX - x) / 20;
-
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)`;
-    });
-  });
 });

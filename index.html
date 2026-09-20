@@ -3,968 +3,391 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- Primary Meta Tags -->
-  <title>Kishore Anand S | ECE Undergraduate & Aspiring Java Developer</title>
+  <title>Kishore Anand S | Portfolio</title>
   <meta name="title" content="Kishore Anand S | ECE Undergraduate & Aspiring Java Developer">
   <meta name="description" content="Personal portfolio of Kishore Anand S - Electronics & Communication Engineering Undergraduate at VSB Engineering College, Aspiring Java Developer, Web Developer, and VLSI Chip Design enthusiast.">
   <meta name="author" content="Kishore Anand S">
-  <meta name="keywords" content="Kishore Anand S, Java Developer, ECE Undergraduate, VLSI Chip Design, Embedded Systems, IoT, Web Developer, VSB Engineering College, Krishnagiri">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Kishore Anand S | ECE Undergraduate & Aspiring Java Developer">
-  <meta property="og:description" content="Personal portfolio of Kishore Anand S - Electronics & Communication Engineering Undergraduate at VSB Engineering College, Aspiring Java Developer, Web Developer, and VLSI Chip Design enthusiast.">
-  <meta property="og:image" content="https://avatars.githubusercontent.com/u/225990424?v=4">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%23050811'/><text x='50%' y='68%' font-family='sans-serif' font-weight='900' font-size='60' fill='%2300f2fe' text-anchor='middle'>K</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%230F172B'/><text x='50%' y='68%' font-family='sans-serif' font-weight='900' font-size='60' fill='%2300f2fe' text-anchor='middle'>K</text></svg>">
 
-  <!-- FontAwesome Icons -->
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Stylesheet -->
+  <!-- Swiper CSS for Slider Functionality -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Particle Canvas & Cyber Grid Background -->
-  <canvas id="particle-canvas"></canvas>
-  <div class="cyber-grid-overlay"></div>
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <a href="#home" class="logo">Kishore Anand</a>
 
-  <!-- Top Scroll Progress Bar -->
-  <div class="scroll-progress-container">
-    <div class="scroll-progress-bar"></div>
-  </div>
+    <nav class="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Specializations</a>
+      <a href="#portfolio">Projects</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar" id="navbar">
-    <div class="container navbar-inner">
-      <a href="#home" class="nav-brand">
-        <div class="brand-logo">K</div>
-        <span class="brand-text">KISHORE ANAND S</span>
-      </a>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#stats" class="nav-link">Dev Stats</a></li>
-        <li><a href="#education" class="nav-link">Education</a></li>
-        <li><a href="#certifications" class="nav-link">Certifications</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-
-      <button class="mobile-nav-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+    <div class="header-actions">
+      <!-- Dark/Light Mode Toggle Icon -->
+      <i class="fa-regular fa-moon" id="dark-mode" title="Toggle Theme"></i>
+      <!-- Hamburger Menu for Mobile -->
+      <i class="fa-solid fa-bars" id="menu-icon" title="Menu"></i>
     </div>
-  </nav>
+  </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="pulse-dot"></span>
-          <span>Available for Opportunities</span>
+  <!-- ================= HOME SECTION ================= -->
+  <section class="home" id="home">
+    <!-- Home Text Content -->
+    <div class="home-content">
+      <h3>Hello, I am</h3>
+      <h1>Kishore Anand S</h1>
+      <p>Currently Pursuing Bachelor's Degree in <br> V.S.B. Engineering College at Karur</p>
+
+      <!-- Social Media Links -->
+      <div class="social-media">
+        <a href="https://github.com/kishoreanands" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/kishoreanandsivakumar" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://leetcode.com/u/kishoreanandsivakumar/" target="_blank" rel="noopener noreferrer" title="LeetCode"><i class="fa-solid fa-code"></i></a>
+        <a href="https://www.hackerrank.com/profile/kishoreanands" target="_blank" rel="noopener noreferrer" title="HackerRank"><i class="fa-brands fa-hackerrank"></i></a>
+        <a href="mailto:kishoreanand876@gmail.com" title="Email Kishore"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="home-buttons">
+        <button class="btn" id="openProfileModalBtn"><i class="fa-solid fa-file-lines"></i> View CV / Profile</button>
+        <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
+      </div>
+    </div>
+
+    <!-- Rotating Profession Wheel & Hero Visual -->
+    <div class="profession-container">
+      <div class="profession-box">
+        <div class="profession" style="--i:0">
+          <i class="fa-brands fa-java"></i>
+          <h3>Java Developer</h3>
         </div>
 
-        <h1 class="hero-name">
-          Hello, I'm <br>
-          <span class="gradient-text">Kishore Anand S</span>
-        </h1>
-
-        <div class="hero-roles">
-          <span id="typing-text"></span>
-          <span class="typing-cursor"></span>
+        <div class="profession" style="--i:1">
+          <i class="fa-solid fa-microchip"></i>
+          <h3>VLSI Engineer</h3>
         </div>
 
-        <p class="hero-bio">
-          Electronics & Communication Engineering undergraduate at VSB Engineering College, Karur. Passionate about software craftsmanship in <strong>Java</strong>, full-stack web applications, <strong>VLSI Chip Design</strong>, and <strong>Embedded Systems</strong>.
+        <div class="profession" style="--i:2">
+          <i class="fa-solid fa-car-battery"></i>
+          <h3>EV &amp; IoT Architect</h3>
+        </div>
+
+        <div class="profession" style="--i:3">
+          <i class="fa-solid fa-code"></i>
+          <h3>Web Developer</h3>
+        </div>
+
+        <!-- Decorative Rotating Circle -->
+        <div class="circle"></div>
+      </div>
+
+      <!-- Overlay for Visual Depth -->
+      <div class="overlay"></div>
+
+      <!-- Center Hero Avatar -->
+      <div class="home-img">
+        <img src="https://avatars.githubusercontent.com/u/225990424?v=4" alt="Kishore Anand S" fetchpriority="high">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT SECTION ================= -->
+  <section class="about" id="about">
+    <div class="about-img">
+      <img src="https://avatars.githubusercontent.com/u/225990424?v=4" alt="Kishore Anand S Profile">
+      <div class="about-badge">
+        <i class="fa-solid fa-award"></i>
+        <span>CGPA: 7.6 / 10</span>
+      </div>
+    </div>
+
+    <div class="about-content">
+      <h2 class="heading">About <span>Me</span></h2>
+      <h3>ELECTRONICS &amp; COMMUNICATION ENGINEERING UNDERGRADUATE</h3>
+
+      <div class="content-wrapper">
+        <p>
+          Hi, I'm <strong>Kishore Anand S</strong>, an Electronics and Communication Engineering undergraduate at <strong>VSB Engineering College, Karur</strong>, with an academic CGPA of <strong>7.6</strong>. I am passionate about software craftsmanship in <strong>Java</strong>, object-oriented systems, and low-level digital hardware architectures including <strong>VLSI Chip Design</strong> and <strong>Embedded Systems</strong>.
+        </p>
+        <p class="more-text" id="moreText">
+          I have hands-on experience building real-world IoT applications like an Automated Municipal Water Flow Management System and an EV Battery Management System (BMS) with regenerative energy recovery. Additionally, I built <strong>EduAI</strong>, an AI-powered smart learning assistant. I hold verified industry credentials in Java Programming from <strong>GUVI | HCL</strong>, Artificial Intelligence from <strong>Infosys Springboard</strong>, and VLSI Chip Design from <strong>Maven Silicon</strong>. I am eager to apply my analytical thinking and technical foundations in full-time software development and engineering roles.
         </p>
 
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">
-            <i class="fa-solid fa-rocket"></i> View My Projects
-          </a>
-          <button class="btn btn-secondary" id="openProfileModalBtn">
-            <i class="fa-solid fa-id-card"></i> View Profile Summary
-          </button>
-          <a href="#contact" class="btn btn-secondary">
-            <i class="fa-solid fa-paper-plane"></i> Contact Me
-          </a>
-        </div>
-
-        <div class="social-links">
-          <a href="https://github.com/kishoreanands" target="_blank" rel="noopener noreferrer" class="social-icon" title="GitHub Profile">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/kishoreanandsivakumar" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn Profile">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-          <a href="https://leetcode.com/u/kishoreanandsivakumar/" target="_blank" rel="noopener noreferrer" class="social-icon" title="LeetCode Profile">
-            <i class="fa-solid fa-code"></i>
-          </a>
-          <a href="https://www.hackerrank.com/profile/kishoreanands" target="_blank" rel="noopener noreferrer" class="social-icon" title="HackerRank Profile">
-            <i class="fa-brands fa-hackerrank"></i>
-          </a>
-          <a href="mailto:kishoreanand876@gmail.com" class="social-icon" title="Send Email">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Hero Visual Tech & Profile Card -->
-      <div class="hero-visual">
-        <div class="visual-card">
-          <!-- Profile Avatar Glow Frame -->
-          <div class="profile-avatar-container">
-            <div class="avatar-glow-ring"></div>
-            <img src="https://avatars.githubusercontent.com/u/225990424?v=4" alt="Kishore Anand S Profile" class="hero-avatar-img">
-            <div class="avatar-status-badge">
-              <i class="fa-solid fa-circle-check cyan-glow-text"></i>
-              <span>Verified Developer</span>
-            </div>
-          </div>
-
-          <div class="terminal-header">
-            <div class="terminal-dots">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
-            </div>
-            <span class="terminal-title">DeveloperProfile.java</span>
-          </div>
-
-          <pre class="code-snippet"><code><span class="code-keyword">public class</span> <span class="code-class">DeveloperProfile</span> {
-  <span class="code-keyword">private String</span> name = <span class="code-string">"Kishore Anand S"</span>;
-  <span class="code-keyword">private String</span> degree = <span class="code-string">"B.E. ECE @ VSB College"</span>;
-  <span class="code-keyword">private double</span> cgpa = <span class="code-type">7.6</span>;
-  
-  <span class="code-comment">// Core Competencies</span>
-  <span class="code-keyword">public String</span>[] <span class="code-func">getSpecializations</span>() {
-    <span class="code-keyword">return new String</span>[] {
-      <span class="code-string">"Java"</span>, <span class="code-string">"HTML/CSS"</span>, <span class="code-string">"MySQL"</span>,
-      <span class="code-string">"VLSI Design"</span>, <span class="code-string">"IoT & BMS"</span>
-    };
-  }
-}</code></pre>
-        </div>
-
-        <div class="floating-tech-badge badge-top-right">
-          <i class="fa-brands fa-java cyan-glow-text"></i>
-          <span>Java Certified</span>
-        </div>
-
-        <div class="floating-tech-badge badge-bottom-left">
-          <i class="fa-solid fa-microchip cyan-glow-text"></i>
-          <span>VLSI Certified</span>
-        </div>
+        <button class="btn" id="readMoreBtn">Read More</button>
       </div>
     </div>
   </section>
 
-  <!-- About Me Section -->
-  <section id="about">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-tag">
-          <i class="fa-solid fa-user-astronaut"></i> Overview
-        </div>
-        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
-        <p class="section-subtitle">A self-motivated engineer bridging software development and hardware innovation.</p>
+  <!-- ================= SPECIALIZATIONS / SERVICES ================= -->
+  <section class="services" id="services">
+    <h2 class="heading">My <span>Specializations</span></h2>
+
+    <div class="services-container">
+      <!-- Service 1: Java -->
+      <div class="services-box">
+        <i class="fa-brands fa-java"></i>
+        <h3>Java &amp; Software Engineering</h3>
+        <p>Strong core proficiency in Java, object-oriented architecture, data structures, algorithms, and relational database management with MySQL.</p>
+        <button class="btn-service-details" data-modal="java">Explore Focus</button>
       </div>
 
-      <div class="about-grid">
-        <div class="glass-card about-summary-card">
-          <h3 class="gradient-text" style="font-size: 1.5rem; margin-bottom: 1rem;">Professional Summary</h3>
-          <p class="about-text">
-            I am an Electronics and Communication Engineering undergraduate at <strong>VSB Engineering College, Karur</strong>, with strong proficiency in <strong>Java programming</strong>, HTML/CSS, and <strong>VLSI Chip Design</strong>.
-          </p>
-          <p class="about-text">
-            I hold industry-recognised certifications in Java from GUVI | HCL, Artificial Intelligence from Infosys Springboard, and VLSI Chip Design from Maven Silicon. I am a self-motivated and collaborative team player with strong analytical thinking, eager to apply my technical knowledge and grow within a challenging professional environment.
-          </p>
+      <!-- Service 2: VLSI -->
+      <div class="services-box">
+        <i class="fa-solid fa-microchip"></i>
+        <h3>VLSI &amp; Chip Design</h3>
+        <p>Certified by Maven Silicon in digital electronics, RTL modeling, Verilog hardware description, and integrated circuit design workflows.</p>
+        <button class="btn-service-details" data-modal="vlsi">Explore Focus</button>
+      </div>
 
-          <div class="info-list">
-            <div class="info-item">
-              <span class="info-label">Location</span>
-              <span class="info-value">Krishnagiri, Tamil Nadu</span>
-            </div>
-            <div class="info-item">
-              <span class="info-label">Degree</span>
-              <span class="info-value">B.E. ECE (2023–Present)</span>
-            </div>
-            <div class="info-item">
-              <span class="info-label">Institution</span>
-              <span class="info-value">VSB Engineering College</span>
-            </div>
-            <div class="info-item">
-              <span class="info-label">Academic CGPA</span>
-              <span class="info-value cyan-glow-text">7.6</span>
-            </div>
+      <!-- Service 3: IoT Flow Automation -->
+      <div class="services-box">
+        <i class="fa-solid fa-faucet-drip"></i>
+        <h3>IoT &amp; Flow Automation</h3>
+        <p>Design and implementation of IoT-enabled flow monitoring systems, automated solenoid valve shutoff, and real-time usage billing telemetry.</p>
+        <button class="btn-service-details" data-modal="iot">Explore Focus</button>
+      </div>
+
+      <!-- Service 4: EV BMS -->
+      <div class="services-box">
+        <i class="fa-solid fa-car-battery"></i>
+        <h3>EV Battery Management (BMS)</h3>
+        <p>Hardware-level battery state-of-charge (SoC) monitoring, regenerative braking energy harvesting loops, and thermal safety cut-off systems.</p>
+        <button class="btn-service-details" data-modal="bms">Explore Focus</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PORTFOLIO / PROJECTS ================= -->
+  <section class="portfolio" id="portfolio">
+    <h2 class="heading">Latest <span>Projects</span></h2>
+
+    <div class="portfolio-container">
+      <!-- Project 1: Municipal Water Flow -->
+      <div class="portfolio-box">
+        <div class="portfolio-icon-banner">
+          <i class="fa-solid fa-faucet-drip"></i>
+        </div>
+        <div class="portfolio-layer">
+          <h4>Municipal Water Flow Control</h4>
+          <p>IoT-based municipal water automation system with high-precision flow sensors, abnormal leak detection, and automated usage billing.</p>
+          <div class="portfolio-links">
+            <button class="btn-project-details" data-project="water"><i class="fa-solid fa-circle-info"></i> Architecture</button>
+            <a href="https://github.com/kishoreanands/automatic-municiple-water-flou-to-an-over-head-tank" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Code</a>
           </div>
         </div>
+      </div>
 
-        <div class="about-highlights">
-          <div class="glass-card highlight-card">
-            <div class="highlight-icon">
-              <i class="fa-brands fa-java"></i>
-            </div>
-            <div>
-              <h4 class="highlight-title">Software Engineering & Java</h4>
-              <p class="highlight-desc">Strong foundation in Java programming, object-oriented principles, web development with HTML/CSS, and relational databases with MySQL.</p>
-            </div>
+      <!-- Project 2: EV BMS -->
+      <div class="portfolio-box">
+        <div class="portfolio-icon-banner purple">
+          <i class="fa-solid fa-car-battery"></i>
+        </div>
+        <div class="portfolio-layer">
+          <h4>EV Battery Management System (BMS)</h4>
+          <p>Electric vehicle BMS engineered for cell monitoring, regenerative braking energy harvesting, and thermal runaway prevention.</p>
+          <div class="portfolio-links">
+            <button class="btn-project-details" data-project="bms"><i class="fa-solid fa-circle-info"></i> Architecture</button>
+            <a href="https://github.com/kishoreanands/Battery-Management-System" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Code</a>
           </div>
+        </div>
+      </div>
 
-          <div class="glass-card highlight-card">
-            <div class="highlight-icon purple">
-              <i class="fa-solid fa-microchip"></i>
-            </div>
-            <div>
-              <h4 class="highlight-title">VLSI & Embedded Hardware</h4>
-              <p class="highlight-desc">Hands-on knowledge in VLSI Chip Design, Embedded Systems, IoT flow sensors, and EV Battery Management Systems (BMS).</p>
-            </div>
-          </div>
-
-          <div class="glass-card highlight-card">
-            <div class="highlight-icon emerald">
-              <i class="fa-solid fa-brain"></i>
-            </div>
-            <div>
-              <h4 class="highlight-title">Artificial Intelligence & Learning</h4>
-              <p class="highlight-desc">Certified in AI by Infosys Springboard. Developed EduAI smart learning assistant for student study recommendations and quiz generation.</p>
-            </div>
+      <!-- Project 3: EduAI -->
+      <div class="portfolio-box">
+        <div class="portfolio-icon-banner pink">
+          <i class="fa-solid fa-brain"></i>
+        </div>
+        <div class="portfolio-layer">
+          <h4>EduAI – Smart Learning Assistant</h4>
+          <p>AI-driven learning assistant providing adaptive study pathways, automated quiz generation, and concept doubt resolution.</p>
+          <div class="portfolio-links">
+            <button class="btn-project-details" data-project="eduai"><i class="fa-solid fa-circle-info"></i> Architecture</button>
+            <a href="https://github.com/kishoreanands/eduai_chatbox_" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Code</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-tag">
-          <i class="fa-solid fa-code"></i> Technical Stack
-        </div>
-        <h2 class="section-title">Skills & <span class="gradient-text">Competencies</span></h2>
-        <p class="section-subtitle">Core technical capabilities across programming languages, hardware design, and analytical soft skills.</p>
-      </div>
+  <!-- ================= CREDENTIALS SLIDER ================= -->
+  <section class="credentials" id="credentials">
+    <h2 class="heading">Verified <span>Credentials</span></h2>
 
-      <div class="skills-container">
-        <!-- Programming & Software -->
-        <div class="glass-card">
-          <h3 class="skill-category-title">
-            <i class="fa-solid fa-laptop-code"></i> Programming
-          </h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name"><i class="fa-brands fa-java cyan-glow-text"></i> Java</span>
-                <span class="skill-level">Proficient</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-level="88"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name"><i class="fa-brands fa-html5" style="color: #e34f26;"></i> HTML</span>
-                <span class="skill-level">Proficient</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-level="85"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name"><i class="fa-solid fa-database" style="color: #00758f;"></i> MySQL</span>
-                <span class="skill-level">Intermediate</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-level="75"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name"><i class="fa-brands fa-css3-alt" style="color: #1572b6;"></i> CSS</span>
-                <span class="skill-level">Intermediate</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-level="72"></div>
-              </div>
-            </div>
-          </div>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <!-- Credential 1 -->
+        <div class="swiper-slide credential-card">
+          <div class="cred-icon"><i class="fa-brands fa-java"></i></div>
+          <h3>Java Programming Certification</h3>
+          <h4>GUVI | HCL</h4>
+          <span class="cred-year">Completed 2024</span>
+          <p>Comprehensive credential in Core Java, object-oriented software engineering, memory management, and algorithm problem-solving.</p>
         </div>
 
-        <!-- Hardware & Embedded Systems -->
-        <div class="glass-card">
-          <h3 class="skill-category-title">
-            <i class="fa-solid fa-microchip"></i> Hardware & Design
-          </h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name"><i class="fa-solid fa-memory" style="color: #9d4edd;"></i> VLSI Chip Design</span>
-                <span class="skill-level">Certified</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress purple" data-level="85"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name"><i class="fa-solid fa-plug" style="color: #00f2fe;"></i> Embedded Systems Basics</span>
-                <span class="skill-level">Intermediate</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress purple" data-level="78"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name"><i class="fa-solid fa-faucet-drip" style="color: #3a7bd5;"></i> Flow Sensor Integration</span>
-                <span class="skill-level">Applied</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress purple" data-level="80"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name"><i class="fa-solid fa-battery-charging" style="color: #10b981;"></i> Regenerative Charging / EV</span>
-                <span class="skill-level">Applied</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress purple" data-level="76"></div>
-              </div>
-            </div>
-          </div>
+        <!-- Credential 2 -->
+        <div class="swiper-slide credential-card">
+          <div class="cred-icon"><i class="fa-solid fa-brain"></i></div>
+          <h3>Artificial Intelligence Certification</h3>
+          <h4>Infosys Springboard</h4>
+          <span class="cred-year">Completed 2025</span>
+          <p>Foundations in artificial intelligence algorithms, machine learning workflows, and practical intelligent application development.</p>
         </div>
 
-        <!-- Soft Skills -->
-        <div class="glass-card">
-          <h3 class="skill-category-title">
-            <i class="fa-solid fa-people-group"></i> Soft Skills
-          </h3>
-          <div class="soft-skills-grid">
-            <span class="soft-skill-chip"><i class="fa-solid fa-clock"></i> Time Management</span>
-            <span class="soft-skill-chip"><i class="fa-solid fa-crown"></i> Leadership</span>
-            <span class="soft-skill-chip"><i class="fa-solid fa-comments"></i> Communication</span>
-            <span class="soft-skill-chip"><i class="fa-solid fa-lightbulb"></i> Critical Thinking</span>
-            <span class="soft-skill-chip"><i class="fa-solid fa-handshake"></i> Team Work</span>
-            <span class="soft-skill-chip"><i class="fa-solid fa-bolt"></i> Quick Learner</span>
-          </div>
+        <!-- Credential 3 -->
+        <div class="swiper-slide credential-card">
+          <div class="cred-icon"><i class="fa-solid fa-microchip"></i></div>
+          <h3>VLSI Chip Design Certification</h3>
+          <h4>Maven Silicon</h4>
+          <span class="cred-year">Completed 2026</span>
+          <p>Specialized industry training covering RTL design, Verilog HDL coding, digital logic synthesis, and semiconductor chip methodologies.</p>
         </div>
       </div>
+
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-tag">
-          <i class="fa-solid fa-diagram-project"></i> Innovation
-        </div>
-        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
-        <p class="section-subtitle">Real-world engineering projects spanning IoT flow automation, EV Battery Management Systems, and AI learning platforms.</p>
+  <!-- ================= CONTACT SECTION ================= -->
+  <section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Me!</span></h2>
+
+    <form class="contact-form" id="contactForm">
+      <div class="input-box">
+        <input type="text" id="userName" name="name" placeholder="Full Name" required>
+        <input type="email" id="userEmail" name="email" placeholder="Email Address" required>
       </div>
 
-      <!-- Category Filter Tabs -->
-      <div class="project-filters">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="hardware">Hardware & IoT</button>
-        <button class="filter-btn" data-filter="software">Software & AI</button>
+      <div class="input-box">
+        <input type="tel" id="userPhone" name="phone" placeholder="Mobile Number">
+        <input type="text" id="subject" name="subject" placeholder="Email Subject" required>
       </div>
 
-      <div class="projects-grid">
-        <!-- Project 1: Municipal Water Control -->
-        <div class="project-card-wrapper" data-category="hardware">
-          <div class="glass-card project-card">
-            <div class="project-card-header">
-              <div class="project-icon-wrapper">
-                <i class="fa-solid fa-faucet-drip"></i>
-              </div>
-              <span class="project-category-badge">IoT / Hardware</span>
-            </div>
+      <textarea id="message" name="message" cols="30" rows="8" placeholder="Your Message" required></textarea>
 
-            <h3 class="project-title">Automated Municipal Water Flow Control Using Flow Sensor</h3>
-
-            <p class="project-description">
-              Designed an IoT-based municipal water management system using sensors for real-time water monitoring and automated usage tracking. Implemented abnormal flow detection, automatic water shutoff, and real-time billing with usage reports to reduce wastage.
-            </p>
-
-            <div class="project-tech-tags">
-              <span class="tech-tag">IoT</span>
-              <span class="tech-tag">Flow Sensors</span>
-              <span class="tech-tag">Embedded Systems</span>
-              <span class="tech-tag">Automated Billing</span>
-            </div>
-
-            <div class="project-footer">
-              <button class="btn-details" data-project="water">
-                <span>View System Architecture</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 2: BMS for EV Vehicles -->
-        <div class="project-card-wrapper" data-category="hardware">
-          <div class="glass-card project-card">
-            <div class="project-card-header">
-              <div class="project-icon-wrapper purple">
-                <i class="fa-solid fa-car-battery"></i>
-              </div>
-              <span class="project-category-badge">EV Tech / Embedded</span>
-            </div>
-
-            <h3 class="project-title">Battery Management System (BMS) for EV Vehicles with Regenerative Charging</h3>
-
-            <p class="project-description">
-              Developed a Battery Management System aimed at enhancing battery safety, cell monitoring, and energy efficiency. Integrated regenerative charging features to harvest energy during braking and extend battery operational life.
-            </p>
-
-            <div class="project-tech-tags">
-              <span class="tech-tag">Embedded Systems</span>
-              <span class="tech-tag">Regenerative Charging</span>
-              <span class="tech-tag">EV Technology</span>
-            </div>
-
-            <div class="project-footer">
-              <button class="btn-details" data-project="bms">
-                <span>View System Architecture</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3: EduAI Assistant -->
-        <div class="project-card-wrapper" data-category="software">
-          <div class="glass-card project-card">
-            <div class="project-card-header">
-              <div class="project-icon-wrapper pink">
-                <i class="fa-solid fa-robot"></i>
-              </div>
-              <span class="project-category-badge">AI / Web Tech</span>
-            </div>
-
-            <h3 class="project-title">EduAI – Smart Learning Assistant</h3>
-
-            <p class="project-description">
-              Developed an AI-powered smart learning platform designed to assist students with personalized study recommendations, automated quiz generation, and progress tracking. Implemented interactive query resolution and adaptive learning pathways to improve user engagement.
-            </p>
-
-            <div class="project-tech-tags">
-              <span class="tech-tag">AI</span>
-              <span class="tech-tag">Machine Learning</span>
-              <span class="tech-tag">Web Technologies</span>
-            </div>
-
-            <div class="project-footer">
-              <button class="btn-details" data-project="eduai">
-                <span>View System Architecture</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <button type="submit" class="btn"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+    </form>
   </section>
 
-  <!-- Live Developer Activity & Stats Section -->
-  <section id="stats">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-tag">
-          <i class="fa-solid fa-chart-line"></i> Live Analytics
-        </div>
-        <h2 class="section-title">Developer <span class="gradient-text">Activity & Stats</span></h2>
-        <p class="section-subtitle">Real-time overview of code activity, GitHub repositories, and problem-solving benchmarks.</p>
-      </div>
-
-      <!-- Quick Metrics Counters -->
-      <div class="stats-counter-grid">
-        <div class="glass-card metric-card">
-          <div class="metric-icon cyan">
-            <i class="fa-brands fa-github"></i>
-          </div>
-          <div class="metric-number">5+</div>
-          <div class="metric-label">GitHub Repositories</div>
-        </div>
-
-        <div class="glass-card metric-card">
-          <div class="metric-icon purple">
-            <i class="fa-brands fa-java"></i>
-          </div>
-          <div class="metric-number">88%</div>
-          <div class="metric-label">Java Competency</div>
-        </div>
-
-        <div class="glass-card metric-card">
-          <div class="metric-icon emerald">
-            <i class="fa-solid fa-graduation-cap"></i>
-          </div>
-          <div class="metric-number">7.6</div>
-          <div class="metric-label">Academic CGPA</div>
-        </div>
-
-        <div class="glass-card metric-card">
-          <div class="metric-icon pink">
-            <i class="fa-solid fa-award"></i>
-          </div>
-          <div class="metric-number">3</div>
-          <div class="metric-label">Certified Credentials</div>
-        </div>
-      </div>
-
-      <!-- Live Profile Platform Widgets Grid -->
-      <div class="dev-widgets-grid">
-        <!-- GitHub Widget Card -->
-        <div class="glass-card widget-card">
-          <div class="widget-header">
-            <img src="https://avatars.githubusercontent.com/u/225990424?v=4" alt="Kishore Anand S GitHub Avatar" class="widget-avatar">
-            <div>
-              <h3 class="widget-user-name">Kishore Anand S</h3>
-              <a href="https://github.com/kishoreanands" target="_blank" rel="noopener noreferrer" class="widget-handle">
-                <i class="fa-brands fa-github"></i> @kishoreanands
-              </a>
-            </div>
-            <span class="widget-badge">GitHub Profile</span>
-          </div>
-
-          <p class="widget-bio">
-            ECE Undergraduate & Aspiring Java Developer. Crafting clean Java applications, IoT flow automation systems, and hardware design.
-          </p>
-
-          <div class="widget-stats-row">
-            <div class="widget-stat">
-              <span class="stat-value">5</span>
-              <span class="stat-name">Repositories</span>
-            </div>
-            <div class="widget-stat">
-              <span class="stat-value">Java / Verilog</span>
-              <span class="stat-name">Primary Tech</span>
-            </div>
-            <div class="widget-stat">
-              <span class="stat-value">India</span>
-              <span class="stat-name">Location</span>
-            </div>
-          </div>
-
-          <div class="widget-cta">
-            <a href="https://github.com/kishoreanands" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%;">
-              <i class="fa-brands fa-github"></i> Explore Repositories
-            </a>
-          </div>
-        </div>
-
-        <!-- LeetCode Widget Card -->
-        <div class="glass-card widget-card">
-          <div class="widget-header">
-            <img src="https://avatars.githubusercontent.com/u/225990424?v=4" alt="Kishore Anand S LeetCode Avatar" class="widget-avatar purple-border">
-            <div>
-              <h3 class="widget-user-name">Kishore Anand S</h3>
-              <a href="https://leetcode.com/u/kishoreanandsivakumar/" target="_blank" rel="noopener noreferrer" class="widget-handle">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> @kishoreanandsivakumar
-              </a>
-            </div>
-            <span class="widget-badge purple">LeetCode Profile</span>
-          </div>
-
-          <p class="widget-bio">
-            Actively practicing Data Structures, Algorithms, and Core Java problem solving to build optimal algorithms.
-          </p>
-
-          <div class="widget-stats-row">
-            <div class="widget-stat">
-              <span class="stat-value">Java</span>
-              <span class="stat-name">Main Language</span>
-            </div>
-            <div class="widget-stat">
-              <span class="stat-value">DSA & Logic</span>
-              <span class="stat-name">Core Focus</span>
-            </div>
-            <div class="widget-stat">
-              <span class="stat-value">Active</span>
-              <span class="stat-name">Practice Status</span>
-            </div>
-          </div>
-
-          <div class="widget-cta">
-            <a href="https://leetcode.com/u/kishoreanandsivakumar/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%;">
-              <i class="fa-solid fa-code"></i> View LeetCode Profile
-            </a>
-          </div>
-        </div>
-
-        <!-- HackerRank Widget Card -->
-        <div class="glass-card widget-card">
-          <div class="widget-header">
-            <img src="https://avatars.githubusercontent.com/u/225990424?v=4" alt="Kishore Anand S HackerRank Avatar" class="widget-avatar emerald-border">
-            <div>
-              <h3 class="widget-user-name">Kishore Anand S</h3>
-              <a href="https://www.hackerrank.com/profile/kishoreanands" target="_blank" rel="noopener noreferrer" class="widget-handle">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> @kishoreanands
-              </a>
-            </div>
-            <span class="widget-badge emerald">HackerRank Profile</span>
-          </div>
-
-          <p class="widget-bio">
-            Solving Data Structures, Algorithms, and Core Java problem-solving challenges on HackerRank to sharpen core logic.
-          </p>
-
-          <div class="widget-stats-row">
-            <div class="widget-stat">
-              <span class="stat-value">Java</span>
-              <span class="stat-name">Main Language</span>
-            </div>
-            <div class="widget-stat">
-              <span class="stat-value">Problem Solving</span>
-              <span class="stat-name">Core Focus</span>
-            </div>
-            <div class="widget-stat">
-              <span class="stat-value">Active</span>
-              <span class="stat-name">Practice Status</span>
-            </div>
-          </div>
-
-          <div class="widget-cta">
-            <a href="https://www.hackerrank.com/profile/kishoreanands" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%;">
-              <i class="fa-brands fa-hackerrank"></i> View HackerRank Profile
-            </a>
-          </div>
-        </div>
-      </div>
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-text">
+      <p>Copyright &copy; 2026 by Kishore Anand S | All Rights Reserved.</p>
     </div>
-  </section>
 
-  <!-- Education Section -->
-  <section id="education">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-tag">
-          <i class="fa-solid fa-graduation-cap"></i> Qualification
-        </div>
-        <h2 class="section-title">Education & <span class="gradient-text">Academics</span></h2>
-        <p class="section-subtitle">Academic background in Electronics and Communication Engineering and Higher Secondary Education.</p>
-      </div>
-
-      <div class="education-timeline">
-        <!-- B.E. ECE -->
-        <div class="timeline-item">
-          <div class="timeline-marker">
-            <i class="fa-solid fa-university"></i>
-          </div>
-          <div class="glass-card timeline-card">
-            <div class="timeline-header">
-              <h3 class="degree-title">B.E. Electronics and Communication Engineering</h3>
-              <span class="timeline-period">2023 – Present</span>
-            </div>
-            <div class="institution-name">
-              <i class="fa-solid fa-location-dot cyan-glow-text"></i>
-              <span>VSB Engineering College, Karur, Tamil Nadu</span>
-            </div>
-            <div class="grade-badge">
-              <i class="fa-solid fa-award"></i>
-              <span>CGPA: 7.6</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- HSC -->
-        <div class="timeline-item">
-          <div class="timeline-marker">
-            <i class="fa-solid fa-school"></i>
-          </div>
-          <div class="glass-card timeline-card">
-            <div class="timeline-header">
-              <h3 class="degree-title">HSC (Higher Secondary Certificate)</h3>
-              <span class="timeline-period">2023</span>
-            </div>
-            <div class="institution-name">
-              <i class="fa-solid fa-location-dot cyan-glow-text"></i>
-              <span>Marutham Matric Higher Secondary School, Dharmapuri, Tamil Nadu</span>
-            </div>
-            <div class="grade-badge">
-              <i class="fa-solid fa-percent"></i>
-              <span>Percentage: 76.1%</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- SSLC -->
-        <div class="timeline-item">
-          <div class="timeline-marker">
-            <i class="fa-solid fa-book-bookmark"></i>
-          </div>
-          <div class="glass-card timeline-card">
-            <div class="timeline-header">
-              <h3 class="degree-title">SSLC (Secondary School Leaving Certificate)</h3>
-              <span class="timeline-period">2021</span>
-            </div>
-            <div class="institution-name">
-              <i class="fa-solid fa-location-dot cyan-glow-text"></i>
-              <span>Marutham Matric Higher Secondary School, Dharmapuri, Tamil Nadu</span>
-            </div>
-            <div class="grade-badge">
-              <i class="fa-solid fa-circle-check"></i>
-              <span>Result: Pass</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="footer-iconTop">
+      <a href="#home" id="backToTopBtn" aria-label="Back to top"><i class="fa-solid fa-angle-up"></i></a>
     </div>
-  </section>
+  </footer>
 
-  <!-- Certifications Section -->
-  <section id="certifications">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-tag">
-          <i class="fa-solid fa-certificate"></i> Credentials
-        </div>
-        <h2 class="section-title">Certifications & <span class="gradient-text">Training</span></h2>
-        <p class="section-subtitle">Industry-recognized professional certifications in Java programming, AI, and VLSI Chip Design.</p>
-      </div>
-
-      <div class="certs-grid">
-        <!-- Cert 1: Java -->
-        <div class="glass-card cert-card">
-          <div class="cert-badge-icon">
-            <i class="fa-brands fa-java"></i>
-          </div>
-          <h3 class="cert-title">Java Programming</h3>
-          <p class="cert-issuer">GUVI | HCL</p>
-          <span class="cert-year">Completed 2024</span>
-        </div>
-
-        <!-- Cert 2: Artificial Intelligence -->
-        <div class="glass-card cert-card">
-          <div class="cert-badge-icon">
-            <i class="fa-solid fa-brain"></i>
-          </div>
-          <h3 class="cert-title">Artificial Intelligence</h3>
-          <p class="cert-issuer">Infosys Springboard</p>
-          <span class="cert-year">Completed 2025</span>
-        </div>
-
-        <!-- Cert 3: VLSI Chip Design -->
-        <div class="glass-card cert-card">
-          <div class="cert-badge-icon">
-            <i class="fa-solid fa-microchip"></i>
-          </div>
-          <h3 class="cert-title">VLSI Chip Design</h3>
-          <p class="cert-issuer">Maven Silicon</p>
-          <span class="cert-year">Completed 2026</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-tag">
-          <i class="fa-solid fa-paper-plane"></i> Get In Touch
-        </div>
-        <h2 class="section-title">Contact & <span class="gradient-text">Connect</span></h2>
-        <p class="section-subtitle">Feel free to reach out for software engineering opportunities, technical discussions, or collaborations.</p>
-      </div>
-
-      <div class="contact-grid">
-        <!-- Contact Direct Info -->
-        <div class="contact-info-cards">
-          <a href="mailto:kishoreanand876@gmail.com" class="glass-card contact-card-item">
-            <div class="contact-icon">
-              <i class="fa-solid fa-envelope"></i>
-            </div>
-            <div class="contact-details">
-              <h4>Email Address</h4>
-              <p>kishoreanand876@gmail.com</p>
-            </div>
-          </a>
-
-          <a href="tel:+919363327557" class="glass-card contact-card-item">
-            <div class="contact-icon">
-              <i class="fa-solid fa-phone"></i>
-            </div>
-            <div class="contact-details">
-              <h4>Phone Number</h4>
-              <p>+91 93633 27557</p>
-            </div>
-          </a>
-
-          <a href="https://www.linkedin.com/in/kishoreanandsivakumar" target="_blank" rel="noopener noreferrer" class="glass-card contact-card-item">
-            <div class="contact-icon">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </div>
-            <div class="contact-details">
-              <h4>LinkedIn Profile</h4>
-              <p>linkedin.com/in/kishoreanandsivakumar</p>
-            </div>
-          </a>
-        </div>
-
-        <!-- Contact Interactive Form -->
-        <div class="glass-card">
-          <form class="contact-form" id="contactForm" action="https://formsubmit.co/kishoreanand876@gmail.com" method="POST">
-            <div class="form-group">
-              <label class="form-label" for="userName">Your Name</label>
-              <input type="text" id="userName" name="name" class="form-input" placeholder="e.g. John Doe" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="userEmail">Email Address</label>
-              <input type="email" id="userEmail" name="email" class="form-input" placeholder="e.g. john@example.com" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" class="form-input" placeholder="Opportunity / Collaboration" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="message">Message</label>
-              <textarea id="message" name="message" class="form-textarea" placeholder="Write your message here..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary" style="width: 100%;">
-              <i class="fa-solid fa-paper-plane"></i> Send Message
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Project Modal Popup -->
-  <div class="modal-backdrop" id="projectModal">
+  <!-- ================= DETAILS MODAL ================= -->
+  <div class="modal-backdrop" id="detailsModal">
     <div class="modal-card">
-      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Modal">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <h3 class="modal-title gradient-text" id="modalTitle">Project Details</h3>
-      <div class="modal-category" id="modalCategory">Category</div>
-
-      <div class="modal-body-section">
-        <h4>Overview</h4>
-        <p id="modalDesc">Detailed description goes here...</p>
-      </div>
-
-      <div class="modal-body-section">
-        <h4>Key Technical Highlights</h4>
-        <ul class="modal-feature-list" id="modalFeatures">
-          <!-- Populated by JS -->
-        </ul>
-      </div>
-
-      <div class="modal-body-section">
-        <h4>Technologies Used</h4>
-        <div class="project-tech-tags" id="modalTechTags">
-          <!-- Populated by JS -->
-        </div>
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Modal">&times;</button>
+      <h3 id="modalTitle">Project Title</h3>
+      <h4 id="modalCategory" class="modal-category">Category</h4>
+      <div class="modal-body">
+        <p id="modalDescription">Description</p>
+        <ul id="modalFeatures"></ul>
+        <div id="modalTags" class="modal-tags"></div>
       </div>
     </div>
   </div>
 
-  <!-- Profile & Resume Overview Modal Popup -->
+  <!-- ================= PROFILE / CV MODAL (PRINT READY) ================= -->
   <div class="modal-backdrop" id="profileModal">
     <div class="modal-card profile-modal-card">
-      <button class="modal-close-btn" id="profileModalCloseBtn" aria-label="Close Profile Modal">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
+      <button class="modal-close-btn" id="profileModalCloseBtn" aria-label="Close Modal">&times;</button>
 
       <div class="profile-modal-header">
         <img src="https://avatars.githubusercontent.com/u/225990424?v=4" alt="Kishore Anand S" class="profile-modal-avatar">
         <div>
-          <h3 class="modal-title gradient-text" style="font-size: 1.6rem; margin-bottom: 0.25rem;">Kishore Anand S</h3>
-          <p class="profile-modal-subtitle">ECE Undergraduate & Aspiring Java Developer</p>
+          <h2>Kishore Anand S</h2>
+          <p class="profile-modal-subtitle">Electronics &amp; Communication Engineering | Aspiring Java Developer</p>
           <div class="profile-modal-meta">
-            <span><i class="fa-solid fa-location-dot"></i> Krishnagiri, TN</span>
-            <span><i class="fa-solid fa-graduation-cap"></i> VSB Engineering College</span>
+            <span><i class="fa-solid fa-location-dot"></i> Krishnagiri, TN, India</span>
+            <span><i class="fa-solid fa-university"></i> VSB Engineering College</span>
             <span><i class="fa-solid fa-award"></i> CGPA: 7.6</span>
           </div>
         </div>
       </div>
 
-      <div class="modal-body-section">
-        <h4><i class="fa-solid fa-user"></i> Professional Summary</h4>
+      <div class="modal-section">
+        <h3><i class="fa-solid fa-user"></i> Professional Profile</h3>
         <p>
-          Self-motivated Electronics and Communication Engineering student at VSB Engineering College with expertise in Java development, relational databases (MySQL), web frontends, and hardware-level IoT/VLSI systems. Eager to contribute technical logic and innovative problem-solving in a full-time software engineering or development role.
+          Self-motivated Electronics and Communication Engineering undergraduate at VSB Engineering College with strong competencies in Java development, object-oriented principles, relational databases (MySQL), and hardware-level IoT and VLSI Chip Design.
         </p>
       </div>
 
-      <div class="modal-body-section">
-        <h4><i class="fa-solid fa-laptop-code"></i> Technical Matrix</h4>
-        <div class="project-tech-tags">
-          <span class="tech-tag">Java (Proficient)</span>
-          <span class="tech-tag">HTML & CSS</span>
-          <span class="tech-tag">MySQL Database</span>
-          <span class="tech-tag">VLSI Chip Design</span>
-          <span class="tech-tag">Embedded Systems</span>
-          <span class="tech-tag">IoT Flow Sensors</span>
-          <span class="tech-tag">EV BMS & Regenerative Charging</span>
+      <div class="modal-section">
+        <h3><i class="fa-solid fa-code"></i> Technical Matrix</h3>
+        <div class="modal-tags">
+          <span class="tag">Java (Proficient)</span>
+          <span class="tag">HTML5 &amp; CSS3</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">VLSI Chip Design</span>
+          <span class="tag">Embedded Systems</span>
+          <span class="tag">IoT Flow Sensors</span>
+          <span class="tag">EV BMS &amp; Regenerative Charging</span>
         </div>
       </div>
 
-      <div class="modal-body-section">
-        <h4><i class="fa-solid fa-certificate"></i> Verified Industry Credentials</h4>
-        <ul class="modal-feature-list">
-          <li><i class="fa-solid fa-circle-check cyan-glow-text"></i> <strong>Java Programming Certification</strong> – GUVI | HCL (2024)</li>
-          <li><i class="fa-solid fa-circle-check cyan-glow-text"></i> <strong>Artificial Intelligence Certification</strong> – Infosys Springboard (2025)</li>
-          <li><i class="fa-solid fa-circle-check cyan-glow-text"></i> <strong>VLSI Chip Design Certification</strong> – Maven Silicon (2026)</li>
+      <div class="modal-section">
+        <h3><i class="fa-solid fa-certificate"></i> Verified Industry Credentials</h3>
+        <ul class="modal-features-list">
+          <li><strong>Java Programming</strong> – GUVI | HCL (2024)</li>
+          <li><strong>Artificial Intelligence</strong> – Infosys Springboard (2025)</li>
+          <li><strong>VLSI Chip Design</strong> – Maven Silicon (2026)</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h3><i class="fa-solid fa-graduation-cap"></i> Academics</h3>
+        <ul class="modal-features-list">
+          <li><strong>B.E. ECE</strong> – VSB Engineering College, Karur (2023–Present) &bull; CGPA: 7.6</li>
+          <li><strong>HSC</strong> – Marutham Matric Hr. Sec. School (2023) &bull; 76.1%</li>
+          <li><strong>SSLC</strong> – Marutham Matric Hr. Sec. School (2021) &bull; Pass</li>
         </ul>
       </div>
 
       <div class="profile-modal-actions">
-        <button class="btn btn-primary" id="printProfileBtn">
-          <i class="fa-solid fa-print"></i> Print / Save Profile
-        </button>
-        <button class="btn btn-secondary" id="closeProfileModalAction">
-          <i class="fa-solid fa-xmark"></i> Close
-        </button>
+        <button class="btn" id="printProfileBtn"><i class="fa-solid fa-print"></i> Print / Save as PDF</button>
+        <button class="btn btn-outline" id="closeProfileModalAction">Close</button>
       </div>
     </div>
   </div>
 
   <!-- Toast Notification -->
-  <div class="toast-notification" id="toast">
-    <i class="fa-solid fa-circle-check toast-icon"></i>
-    <span>Message dispatched! Kishore will get back to you soon.</span>
+  <div class="toast" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span>Message dispatched successfully!</span>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="brand-logo" style="width: 45px; height: 45px; font-size: 1.4rem;">K</div>
-      <p class="footer-copy">
-        &copy; 2026 Kishore Anand S. Crafted with precision & cyber-tech aesthetics. All details strictly aligned with resume.
-      </p>
-    </div>
-  </footer>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <!-- Back to Top Button -->
-  <button class="back-to-top-btn" id="backToTop" aria-label="Back to top">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
-
-  <!-- JavaScript -->
+  <!-- Main JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
