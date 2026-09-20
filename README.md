@@ -45,11 +45,16 @@ A personal portfolio web application designed with cyber-tech aesthetics, glassm
 
 ```text
 profolink/
-├── index.html       # Primary semantic structure & layout
-├── styles.css       # Complete cyber-tech design system & print styles
-├── script.js        # Interactive particles, modals, typing effect & forms
-├── .gitignore       # Git ignore configuration
-└── README.md        # Project documentation & live links
+├── index.html            # Primary semantic structure & layout
+├── styles.css            # Complete cyber-tech design system & print styles
+├── script.js             # Interactive particles, modals, typing effect & forms
+├── css/
+│   └── style.css         # Modular portfolio styles & theme tokens
+├── js/
+│   ├── app.js            # Modular application UI & scroll interactions
+│   └── background.js     # Background animation logic
+├── .gitignore            # Git ignore configuration
+└── README.md             # Project documentation & live links
 ```
 
 ---

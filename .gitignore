@@ -1,8 +1,4 @@
-# Legacy draft folders
-css/
-js/
-
-# OS files
+# OS metadata
 .DS_Store
 Thumbs.db
 desktop.ini
