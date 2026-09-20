@@ -1,7 +1,6 @@
 /* ==========================================================================
    KISHORE ANAND S - PORTFOLIO INTERACTIVITY SCRIPT
-   Style Reference: https://nishwapandiyan.github.io/Portfolio/
-   Features: Theme Switcher, Mobile Nav, Scroll Spy, Swiper, Modals & Forms
+   Features: Theme Switcher, Role Typewriter, Cert Filter, Modals, Forms
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,7 +24,49 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   });
 
-  // ================= 2. MOBILE NAVBAR TOGGLE =================
+  // ================= 2. ROLE TYPEWRITER ANIMATION =================
+  const roleTypingElem = document.getElementById('roleTyping');
+  if (roleTypingElem) {
+    const roles = [
+      'Java & Software Developer',
+      'Embedded Systems Engineer',
+      'IoT Flow Automation Architect',
+      'VLSI Chip Design Enthusiast'
+    ];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 70;
+
+    function typeRoles() {
+      const currentRole = roles[roleIndex];
+
+      if (isDeleting) {
+        roleTypingElem.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+        typingSpeed = 35;
+      } else {
+        roleTypingElem.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+        typingSpeed = 70;
+      }
+
+      if (!isDeleting && charIndex === currentRole.length) {
+        isDeleting = true;
+        typingSpeed = 1600; // Pause at end of word
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        typingSpeed = 350;
+      }
+
+      setTimeout(typeRoles, typingSpeed);
+    }
+
+    typeRoles();
+  }
+
+  // ================= 3. MOBILE NAVBAR TOGGLE =================
   const menuIcon = document.getElementById('menu-icon');
   const navbar = document.querySelector('.navbar');
 
@@ -43,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ================= 3. SCROLL SPY & STICKY HEADER =================
+  // ================= 4. SCROLL SPY & STICKY HEADER =================
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('header nav a');
   const header = document.querySelector('.header');
@@ -64,11 +105,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (header) {
-      header.classList.toggle('sticky', top > 80);
+      header.classList.toggle('sticky', top > 60);
     }
   });
 
-  // ================= 4. ABOUT SECTION READ MORE TOGGLE =================
+  // ================= 5. ABOUT READ MORE TOGGLE =================
   const readMoreBtn = document.getElementById('readMoreBtn');
   const moreText = document.getElementById('moreText');
 
@@ -77,44 +118,47 @@ document.addEventListener('DOMContentLoaded', () => {
     readMoreBtn.textContent = isShowing ? 'Read Less' : 'Read More';
   });
 
-  // ================= 5. SWIPER CREDENTIALS SLIDER =================
-  if (typeof Swiper !== 'undefined') {
-    new Swiper('.mySwiper', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      grabCursor: true,
-      loop: true,
-      autoplay: {
-        delay: 3500,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        768: {
-          slidesPerView: 1,
-        }
-      }
-    });
-  }
+  // ================= 6. CERTIFICATION FILTER TABS =================
+  const certFilterBtns = document.querySelectorAll('.cert-filter-btn');
+  const certCards = document.querySelectorAll('.cert-card-item');
 
-  // ================= 6. MODALS LOGIC =================
+  certFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      certFilterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      certCards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 30);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(10px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 250);
+        }
+      });
+    });
+  });
+
+  // ================= 7. MODALS DATA & FUNCTIONALITY =================
   const modalData = {
     // Project Modals
     water: {
       title: 'Automated Municipal Water Flow Control Using Flow Sensor',
       category: 'IoT & Hardware Automation',
-      description: 'An automated IoT municipal water distribution and conservation platform engineered to eliminate water waste, monitor consumption telemetry, and prevent unauthorized usage.',
+      description: 'An automated IoT municipal water distribution and conservation platform engineered to eliminate water waste, monitor consumption telemetry in real time, and prevent unauthorized usage.',
       features: [
         'Real-time water flow telemetry using high-precision Hall-effect flow sensors.',
-        'Automatic abnormal pressure and leak detection with instant valve shut-off.',
-        'Automated digital usage tracking and real-time billing generation.',
+        'Automatic abnormal pressure and leak detection with instant solenoid valve shut-off.',
+        'Automated digital usage tracking and real-time billing report generation.',
         'Significantly reduces municipal distribution losses and optimizes water equity.'
       ],
       tags: ['IoT', 'Flow Sensors', 'Embedded Systems', 'Automated Billing']
@@ -124,10 +168,10 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'EV Hardware & Safety Systems',
       description: 'An advanced Battery Management System tailored for Electric Vehicles to ensure cell safety, accurate state-of-charge calculation, and dynamic regenerative energy recapture.',
       features: [
-        'Precise cell voltage, current, temperature, and State-of-Charge (SoC) telemetry.',
-        'Integrated regenerative braking kinetic energy recapture circuit.',
+        'Precise multi-cell voltage, current, temperature, and State-of-Charge (SoC) telemetry.',
+        'Integrated regenerative braking kinetic energy recapture circuit for extended range.',
         'Automated protection cut-offs against over-charging, thermal runaway, and deep discharge.',
-        'Significantly extends overall vehicle driving range and battery lifecycle.'
+        'Significantly extends overall vehicle driving efficiency and battery pack lifecycle.'
       ],
       tags: ['Embedded Systems', 'Regenerative Charging', 'EV Technology', 'Cell Monitoring']
     },
@@ -137,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
       description: 'An AI-powered adaptive learning assistant platform designed to accelerate student learning efficiency through personalized study recommendations and dynamic quizzes.',
       features: [
         'Adaptive study pathway recommendation engine tailored to student learning velocity.',
-        'Automated concept quiz and flashcard generation directly from study materials.',
+        'Automated concept quiz and flashcard generation directly from study lecture materials.',
         'Interactive AI academic doubt resolution assistant.',
         'Visual progress tracking dashboard with learning analytics.'
       ],
@@ -149,36 +193,48 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'Core Competency',
       description: 'Focused software engineering practice building scalable, structured applications using modern Java development standards.',
       features: [
-        'Object-oriented principles, design patterns, and clean code practices.',
-        'Data structures and algorithm optimization (actively practicing on LeetCode & HackerRank).',
-        'Relational database design and integration using MySQL.',
-        'Backend server workflows and RESTful architecture basics.'
+        'Object-oriented principles, modular architecture, and clean code practices.',
+        'Data structures and algorithm optimization (actively solving on LeetCode & HackerRank).',
+        'Relational database design and integration using MySQL and complex SQL queries.',
+        'Backend server workflows and robust error handling.'
       ],
       tags: ['Core Java', 'OOP', 'Data Structures', 'MySQL', 'Problem Solving']
     },
-    vlsi: {
-      title: 'VLSI & Chip Design Focus',
-      category: 'Hardware Engineering',
-      description: 'Specialized digital circuit engineering and semiconductor workflow training certified by Maven Silicon.',
+    embedded: {
+      title: 'Embedded System Design Focus',
+      category: 'Hardware Engineering (Certified by Maven Silicon)',
+      description: 'Specialized embedded systems development covering microcontroller architectures, processor interfacing, and firmware integration.',
       features: [
-        'Digital electronics foundations and combinational/sequential logic design.',
-        'Hardware description modeling with Verilog HDL.',
-        'RTL synthesis, simulation, and timing verification fundamentals.',
-        'Industry semiconductor fabrication and chip design flow knowledge.'
+        'Embedded C programming for microcontrollers and system peripherals.',
+        'Hardware description and processor architecture foundations (RISC-V ecosystem).',
+        'Sensor integration, analog-to-digital conversion, and actuator control.',
+        'Low-power optimization and real-time response mechanisms.'
       ],
-      tags: ['VLSI', 'Verilog HDL', 'RTL Design', 'Digital Logic', 'Maven Silicon']
+      tags: ['Embedded C', 'Maven Silicon', 'RISC-V', 'Microcontrollers', 'Firmware']
     },
     iot: {
-      title: 'IoT & Municipal Flow Automation Focus',
-      category: 'Embedded & Smart Infrastructure',
-      description: 'Developing responsive hardware-to-cloud IoT architectures that solve real municipal and resource conservation problems.',
+      title: 'IoT & Flow Automation Focus',
+      category: 'Smart Infrastructure (Certified by Cisco Academy)',
+      description: 'Developing responsive hardware-to-cloud IoT architectures that solve real-world municipal and resource conservation problems.',
       features: [
-        'Microcontroller interfacing with flow and environmental sensors.',
-        'Actuator and solenoid valve control circuits for automated intervention.',
-        'Usage data telemetry and cloud analytics integration.',
-        'Low-power embedded systems firmware design.'
+        'Cisco Networking Academy certified IoT and digital transformation knowledge.',
+        'Microcontroller interfacing with precision flow and environmental sensors.',
+        'Actuator and solenoid valve control circuits for automated municipal intervention.',
+        'Usage telemetry and cloud communication protocols.'
       ],
-      tags: ['IoT', 'Microcontrollers', 'Flow Automation', 'Smart Cities']
+      tags: ['IoT', 'Cisco Academy', 'Flow Automation', 'Smart Cities', 'Sensors']
+    },
+    bms: {
+      title: 'EV BMS & VLSI Design Focus',
+      category: 'Advanced Hardware & Semiconductor Engineering',
+      description: 'Combining EV battery management safety architectures with digital VLSI chip design verified by Maven Silicon.',
+      features: [
+        'State-of-Charge (SoC) calculation, temperature regulation, and cell-balancing logic.',
+        'Regenerative kinetic energy recapture integration for electric vehicle powertrains.',
+        'RTL synthesis, Verilog HDL coding, and digital system verification fundamentals.',
+        'Semiconductor fabrication and ASIC chip design flow methodologies.'
+      ],
+      tags: ['EV BMS', 'VLSI', 'Maven Silicon', 'Verilog', 'Battery Safety']
     }
   };
 
@@ -280,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ================= 7. CONTACT FORM SUBMISSION =================
+  // ================= 8. CONTACT FORM HANDLING =================
   const contactForm = document.getElementById('contactForm');
   const toast = document.getElementById('toast');
 
@@ -328,7 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
         throw new Error('Server returned non-200 status');
       }
     } catch (err) {
-      console.warn('Network issue with direct API dispatch, triggering mailto client fallback...', err);
+      console.warn('Direct API submission encountered issue, opening mail client...', err);
       const mailtoUrl = `mailto:kishoreanand876@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`)}`;
       window.location.href = mailtoUrl;
       showToast('Opening your email client to send message...');

@@ -120,13 +120,16 @@ Status: Actively seeking Software Development & Engineering Opportunities
 
 ---
 
-### 🏆 Verified Industry Credentials
+### 🏆 Verified Industry Credentials (6)
 
-| Credential | Issuing Organization | Year | Focus Area |
+| Credential | Issuing Organization | Year / ID | Focus Area |
 | :--- | :--- | :---: | :--- |
-| ☕ **Java Programming** | **GUVI \| HCL** | 2024 | Core Java, Object-Oriented Programming & Problem Solving |
+| ⚡ **Embedded System Design - Overview** | **Maven Silicon** &bull; Centre of Excellence in Semicon | 2026 <br> `MSUID: 9921068560` | Microcontroller Interfacing, Firmware, Embedded C & RISC-V |
+| 🌐 **Introduction to IoT & Digital Transformation** | **Cisco Networking Academy** &bull; EdCreate Foundation | 2025 | Industrial IoT Architecture, Connected Sensors & Networks |
+| 🗄️ **SQL (Intermediate)** | **HackerRank** | 2026 <br> `ID: 1512C813DBF2` | Complex Queries, Joins, Aggregation & Database Performance |
+| ☕ **Java Programming** | **GUVI \| HCL** | 2024 | Core Java OOP, Multithreading & Algorithm Problem Solving |
 | 🤖 **Artificial Intelligence** | **Infosys Springboard** | 2025 | AI Concepts, Machine Learning & Intelligent Applications |
-| 🔬 **VLSI Chip Design** | **Maven Silicon** | 2026 | RTL Design, Verilog, Digital Logic & Chip Architecture |
+| 🔬 **VLSI Chip Design** | **Maven Silicon** | 2026 | RTL Synthesis, Verilog HDL & Semiconductor Architecture |
 
 ---
 

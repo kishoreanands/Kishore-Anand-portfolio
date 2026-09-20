@@ -7,7 +7,7 @@
   <!-- Primary Meta Tags -->
   <title>Kishore Anand S | Portfolio</title>
   <meta name="title" content="Kishore Anand S | ECE Undergraduate & Aspiring Java Developer">
-  <meta name="description" content="Personal portfolio of Kishore Anand S - Electronics & Communication Engineering Undergraduate at VSB Engineering College, Aspiring Java Developer, Web Developer, and VLSI Chip Design enthusiast.">
+  <meta name="description" content="Personal portfolio of Kishore Anand S - Electronics & Communication Engineering Undergraduate at VSB Engineering College, Aspiring Java Developer, Embedded Systems, IoT, and VLSI Chip Design enthusiast.">
   <meta name="author" content="Kishore Anand S">
 
   <!-- Favicon -->
@@ -16,18 +16,18 @@
   <!-- Google Fonts: Inter & Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- FontAwesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- Swiper CSS for Slider Functionality -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- Background Decorative Cyber Canvas -->
+  <div class="bg-mesh-pattern"></div>
 
   <!-- ================= HEADER ================= -->
   <header class="header">
@@ -38,7 +38,7 @@
       <a href="#about">About</a>
       <a href="#services">Specializations</a>
       <a href="#portfolio">Projects</a>
-      <a href="#credentials">Credentials</a>
+      <a href="#credentials">Certifications</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -54,9 +54,23 @@
   <section class="home" id="home">
     <!-- Home Text Content -->
     <div class="home-content">
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        <span>Available for Opportunities</span>
+      </div>
+
       <h3>Hello, I am</h3>
       <h1>Kishore Anand S</h1>
-      <p>Currently Pursuing Bachelor's Degree in <br> V.S.B. Engineering College at Karur</p>
+
+      <div class="typing-role-box">
+        <span id="roleTyping"></span>
+        <span class="cursor-blink">|</span>
+      </div>
+
+      <p class="hero-desc">
+        Electronics &amp; Communication Engineering Undergraduate at <br>
+        <strong>V.S.B. Engineering College, Karur</strong>. Passionate about software craftsmanship in <strong>Java</strong>, <strong>Embedded Systems</strong>, <strong>IoT Flow Automation</strong>, and <strong>VLSI Chip Design</strong>.
+      </p>
 
       <!-- Social Media Links -->
       <div class="social-media">
@@ -74,66 +88,61 @@
       </div>
     </div>
 
-    <!-- Rotating Profession Wheel & Hero Visual -->
-    <div class="profession-container">
-      <div class="profession-box">
-        <div class="profession" style="--i:0">
-          <i class="fa-brands fa-java"></i>
-          <h3>Java Developer</h3>
+    <!-- Clean, Simple, Elegant Hero Profile Presentation -->
+    <div class="hero-profile-wrapper">
+      <div class="hero-profile-card">
+        <!-- Ambient Glow Aura -->
+        <div class="hero-glow-aura"></div>
+
+        <!-- Clean Profile Photo -->
+        <div class="hero-photo-frame">
+          <img src="https://avatars.githubusercontent.com/u/225990424?v=4" alt="Kishore Anand S Profile" class="hero-img-simple">
         </div>
 
-        <div class="profession" style="--i:1">
-          <i class="fa-solid fa-microchip"></i>
-          <h3>VLSI Engineer</h3>
+        <!-- Subtle Floating Info Badges -->
+        <div class="floating-badge badge-top">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Verified Engineer</span>
         </div>
 
-        <div class="profession" style="--i:2">
-          <i class="fa-solid fa-car-battery"></i>
-          <h3>EV &amp; IoT Architect</h3>
+        <div class="floating-badge badge-bottom">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>CGPA: 7.6 &bull; VSB College</span>
         </div>
-
-        <div class="profession" style="--i:3">
-          <i class="fa-solid fa-code"></i>
-          <h3>Web Developer</h3>
-        </div>
-
-        <!-- Decorative Rotating Circle -->
-        <div class="circle"></div>
-      </div>
-
-      <!-- Overlay for Visual Depth -->
-      <div class="overlay"></div>
-
-      <!-- Center Hero Avatar -->
-      <div class="home-img">
-        <img src="https://avatars.githubusercontent.com/u/225990424?v=4" alt="Kishore Anand S" fetchpriority="high">
       </div>
     </div>
   </section>
 
   <!-- ================= ABOUT SECTION ================= -->
   <section class="about" id="about">
-    <div class="about-img">
-      <img src="https://avatars.githubusercontent.com/u/225990424?v=4" alt="Kishore Anand S Profile">
-      <div class="about-badge">
-        <i class="fa-solid fa-award"></i>
-        <span>CGPA: 7.6 / 10</span>
+    <div class="about-container">
+      <div class="about-img-box">
+        <div class="about-frame">
+          <img src="https://avatars.githubusercontent.com/u/225990424?v=4" alt="Kishore Anand S">
+          <div class="about-badge">
+            <i class="fa-solid fa-microchip"></i>
+            <span>ECE Undergraduate</span>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="about-content">
-      <h2 class="heading">About <span>Me</span></h2>
-      <h3>ELECTRONICS &amp; COMMUNICATION ENGINEERING UNDERGRADUATE</h3>
+      <div class="about-content">
+        <h2 class="heading">About <span>Me</span></h2>
+        <h3>ENGINEERING INNOVATION ACROSS SOFTWARE &amp; HARDWARE</h3>
 
-      <div class="content-wrapper">
-        <p>
-          Hi, I'm <strong>Kishore Anand S</strong>, an Electronics and Communication Engineering undergraduate at <strong>VSB Engineering College, Karur</strong>, with an academic CGPA of <strong>7.6</strong>. I am passionate about software craftsmanship in <strong>Java</strong>, object-oriented systems, and low-level digital hardware architectures including <strong>VLSI Chip Design</strong> and <strong>Embedded Systems</strong>.
-        </p>
-        <p class="more-text" id="moreText">
-          I have hands-on experience building real-world IoT applications like an Automated Municipal Water Flow Management System and an EV Battery Management System (BMS) with regenerative energy recovery. Additionally, I built <strong>EduAI</strong>, an AI-powered smart learning assistant. I hold verified industry credentials in Java Programming from <strong>GUVI | HCL</strong>, Artificial Intelligence from <strong>Infosys Springboard</strong>, and VLSI Chip Design from <strong>Maven Silicon</strong>. I am eager to apply my analytical thinking and technical foundations in full-time software development and engineering roles.
-        </p>
+        <div class="content-wrapper">
+          <p>
+            Hi, I'm <strong>Kishore Anand S</strong>, an Electronics and Communication Engineering student at <strong>VSB Engineering College, Karur</strong>, holding a cumulative CGPA of <strong>7.6</strong>. My journey bridges software engineering in <strong>Java</strong> with low-level hardware intelligence in <strong>Embedded Systems</strong>, <strong>IoT Flow Automation</strong>, and <strong>VLSI Chip Design</strong>.
+          </p>
+          <p class="more-text" id="moreText">
+            I hold <strong>6 verified industry certifications</strong> from <strong>Maven Silicon</strong>, <strong>Cisco Networking Academy</strong>, <strong>HackerRank</strong>, <strong>GUVI | HCL</strong>, and <strong>Infosys Springboard</strong>. My practical projects span an Automated Municipal Water Flow Management System, an EV Battery Management System with regenerative braking energy recovery, and EduAI, an intelligent study assistant. I am continuously learning and actively seeking software development and embedded hardware roles to contribute and grow with industry leaders.
+          </p>
 
-        <button class="btn" id="readMoreBtn">Read More</button>
+          <div class="about-actions">
+            <button class="btn" id="readMoreBtn">Read More</button>
+            <a href="#credentials" class="btn btn-outline"><i class="fa-solid fa-certificate"></i> View 6 Certifications</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -141,37 +150,66 @@
   <!-- ================= SPECIALIZATIONS / SERVICES ================= -->
   <section class="services" id="services">
     <h2 class="heading">My <span>Specializations</span></h2>
+    <p class="section-intro">Core engineering capabilities cultivated through rigorous academic coursework, industry certifications, and hands-on builds.</p>
 
     <div class="services-container">
       <!-- Service 1: Java -->
       <div class="services-box">
-        <i class="fa-brands fa-java"></i>
+        <div class="service-icon-box">
+          <i class="fa-brands fa-java"></i>
+        </div>
         <h3>Java &amp; Software Engineering</h3>
-        <p>Strong core proficiency in Java, object-oriented architecture, data structures, algorithms, and relational database management with MySQL.</p>
+        <p>Core Java, object-oriented design patterns, data structures, algorithm problem solving (LeetCode &amp; HackerRank), and database integration with MySQL.</p>
+        <div class="service-tags">
+          <span>Core Java</span>
+          <span>OOP</span>
+          <span>DSA</span>
+        </div>
         <button class="btn-service-details" data-modal="java">Explore Focus</button>
       </div>
 
-      <!-- Service 2: VLSI -->
+      <!-- Service 2: Embedded Systems -->
       <div class="services-box">
-        <i class="fa-solid fa-microchip"></i>
-        <h3>VLSI &amp; Chip Design</h3>
-        <p>Certified by Maven Silicon in digital electronics, RTL modeling, Verilog hardware description, and integrated circuit design workflows.</p>
-        <button class="btn-service-details" data-modal="vlsi">Explore Focus</button>
+        <div class="service-icon-box cyan">
+          <i class="fa-solid fa-microchip"></i>
+        </div>
+        <h3>Embedded System Design</h3>
+        <p>Certified by Maven Silicon. Microcontroller firmware, hardware interfacing, sensor telemetry, and low-power system architecture design.</p>
+        <div class="service-tags">
+          <span>Embedded C</span>
+          <span>Microcontrollers</span>
+          <span>Firmware</span>
+        </div>
+        <button class="btn-service-details" data-modal="embedded">Explore Focus</button>
       </div>
 
-      <!-- Service 3: IoT Flow Automation -->
+      <!-- Service 3: IoT & Flow Automation -->
       <div class="services-box">
-        <i class="fa-solid fa-faucet-drip"></i>
+        <div class="service-icon-box purple">
+          <i class="fa-solid fa-faucet-drip"></i>
+        </div>
         <h3>IoT &amp; Flow Automation</h3>
-        <p>Design and implementation of IoT-enabled flow monitoring systems, automated solenoid valve shutoff, and real-time usage billing telemetry.</p>
+        <p>Certified by Cisco Networking Academy. Water flow sensor networks, automated solenoid valve shut-off mechanisms, and real-time usage billing telemetry.</p>
+        <div class="service-tags">
+          <span>IoT Sensors</span>
+          <span>Cisco Certified</span>
+          <span>Automation</span>
+        </div>
         <button class="btn-service-details" data-modal="iot">Explore Focus</button>
       </div>
 
-      <!-- Service 4: EV BMS -->
+      <!-- Service 4: EV BMS & VLSI -->
       <div class="services-box">
-        <i class="fa-solid fa-car-battery"></i>
-        <h3>EV Battery Management (BMS)</h3>
-        <p>Hardware-level battery state-of-charge (SoC) monitoring, regenerative braking energy harvesting loops, and thermal safety cut-off systems.</p>
+        <div class="service-icon-box pink">
+          <i class="fa-solid fa-car-battery"></i>
+        </div>
+        <h3>EV BMS &amp; VLSI Design</h3>
+        <p>Battery State-of-Charge (SoC) monitoring, regenerative braking kinetic energy recapture circuits, thermal safety cut-offs, and RTL digital logic design.</p>
+        <div class="service-tags">
+          <span>EV Tech</span>
+          <span>BMS</span>
+          <span>VLSI RTL</span>
+        </div>
         <button class="btn-service-details" data-modal="bms">Explore Focus</button>
       </div>
     </div>
@@ -180,16 +218,23 @@
   <!-- ================= PORTFOLIO / PROJECTS ================= -->
   <section class="portfolio" id="portfolio">
     <h2 class="heading">Latest <span>Projects</span></h2>
+    <p class="section-intro">Featured hardware and software innovations solving real-world challenges with verified architectures.</p>
 
     <div class="portfolio-container">
       <!-- Project 1: Municipal Water Flow -->
       <div class="portfolio-box">
         <div class="portfolio-icon-banner">
           <i class="fa-solid fa-faucet-drip"></i>
+          <span class="project-pill">Hardware &amp; IoT</span>
         </div>
         <div class="portfolio-layer">
-          <h4>Municipal Water Flow Control</h4>
-          <p>IoT-based municipal water automation system with high-precision flow sensors, abnormal leak detection, and automated usage billing.</p>
+          <h4>Municipal Water Flow Control Using Flow Sensor</h4>
+          <p>IoT-based municipal water automation system with high-precision flow sensors, abnormal leak detection, and automated usage billing to eliminate water waste.</p>
+          <div class="portfolio-tech-list">
+            <span>IoT</span>
+            <span>Flow Sensors</span>
+            <span>Embedded Systems</span>
+          </div>
           <div class="portfolio-links">
             <button class="btn-project-details" data-project="water"><i class="fa-solid fa-circle-info"></i> Architecture</button>
             <a href="https://github.com/kishoreanands/automatic-municiple-water-flou-to-an-over-head-tank" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Code</a>
@@ -201,10 +246,16 @@
       <div class="portfolio-box">
         <div class="portfolio-icon-banner purple">
           <i class="fa-solid fa-car-battery"></i>
+          <span class="project-pill">EV Hardware</span>
         </div>
         <div class="portfolio-layer">
           <h4>EV Battery Management System (BMS)</h4>
-          <p>Electric vehicle BMS engineered for cell monitoring, regenerative braking energy harvesting, and thermal runaway prevention.</p>
+          <p>Electric vehicle BMS engineered for real-time cell voltage, temperature, SoC monitoring, regenerative braking energy recovery, and thermal runaway prevention.</p>
+          <div class="portfolio-tech-list">
+            <span>Embedded C</span>
+            <span>Regenerative Charging</span>
+            <span>EV BMS</span>
+          </div>
           <div class="portfolio-links">
             <button class="btn-project-details" data-project="bms"><i class="fa-solid fa-circle-info"></i> Architecture</button>
             <a href="https://github.com/kishoreanands/Battery-Management-System" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Code</a>
@@ -216,10 +267,16 @@
       <div class="portfolio-box">
         <div class="portfolio-icon-banner pink">
           <i class="fa-solid fa-brain"></i>
+          <span class="project-pill">Software &amp; AI</span>
         </div>
         <div class="portfolio-layer">
           <h4>EduAI – Smart Learning Assistant</h4>
-          <p>AI-driven learning assistant providing adaptive study pathways, automated quiz generation, and concept doubt resolution.</p>
+          <p>AI-driven adaptive learning platform providing personalized study recommendations, automated concept quiz generation, and doubt resolution analytics.</p>
+          <div class="portfolio-tech-list">
+            <span>AI / ML</span>
+            <span>Web Platform</span>
+            <span>Analytics</span>
+          </div>
           <div class="portfolio-links">
             <button class="btn-project-details" data-project="eduai"><i class="fa-solid fa-circle-info"></i> Architecture</button>
             <a href="https://github.com/kishoreanands/eduai_chatbox_" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Code</a>
@@ -229,49 +286,128 @@
     </div>
   </section>
 
-  <!-- ================= CREDENTIALS SLIDER ================= -->
+  <!-- ================= CREDENTIALS / CERTIFICATIONS ================= -->
   <section class="credentials" id="credentials">
-    <h2 class="heading">Verified <span>Credentials</span></h2>
+    <h2 class="heading">Verified <span>Certifications</span></h2>
+    <p class="section-intro">6 verified industry credentials spanning Embedded Systems, IoT, Databases, Java, AI, and VLSI Chip Design.</p>
 
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <!-- Credential 1 -->
-        <div class="swiper-slide credential-card">
-          <div class="cred-icon"><i class="fa-brands fa-java"></i></div>
-          <h3>Java Programming Certification</h3>
-          <h4>GUVI | HCL</h4>
-          <span class="cred-year">Completed 2024</span>
-          <p>Comprehensive credential in Core Java, object-oriented software engineering, memory management, and algorithm problem-solving.</p>
-        </div>
+    <!-- Filter Buttons for Certifications -->
+    <div class="cert-filter-pills">
+      <button class="cert-filter-btn active" data-filter="all">All (6)</button>
+      <button class="cert-filter-btn" data-filter="hardware">Hardware &amp; Embedded</button>
+      <button class="cert-filter-btn" data-filter="software">Software &amp; Database</button>
+      <button class="cert-filter-btn" data-filter="ai-iot">AI &amp; IoT</button>
+    </div>
 
-        <!-- Credential 2 -->
-        <div class="swiper-slide credential-card">
-          <div class="cred-icon"><i class="fa-solid fa-brain"></i></div>
-          <h3>Artificial Intelligence Certification</h3>
-          <h4>Infosys Springboard</h4>
-          <span class="cred-year">Completed 2025</span>
-          <p>Foundations in artificial intelligence algorithms, machine learning workflows, and practical intelligent application development.</p>
+    <div class="cert-grid">
+      <!-- Cert 1: Maven Silicon Embedded Systems (NEW) -->
+      <div class="cert-card-item" data-category="hardware">
+        <div class="cert-card-header">
+          <div class="cert-icon-wrap cyan">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified</span>
         </div>
-
-        <!-- Credential 3 -->
-        <div class="swiper-slide credential-card">
-          <div class="cred-icon"><i class="fa-solid fa-microchip"></i></div>
-          <h3>VLSI Chip Design Certification</h3>
-          <h4>Maven Silicon</h4>
-          <span class="cred-year">Completed 2026</span>
-          <p>Specialized industry training covering RTL design, Verilog HDL coding, digital logic synthesis, and semiconductor chip methodologies.</p>
+        <h3 class="cert-card-title">Embedded System Design - Overview</h3>
+        <h4 class="cert-card-issuer">Maven Silicon &bull; Centre of Excellence in Semicon</h4>
+        <div class="cert-card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 24 May 2026</span>
+          <span class="cert-id-tag">MSUID: 9921068560</span>
         </div>
+        <p class="cert-card-desc">Certified in embedded hardware architecture, processor interfacing, firmware integration, and RISC-V ecosystem methodologies.</p>
       </div>
 
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+      <!-- Cert 2: Cisco IoT & Digital Transformation (NEW) -->
+      <div class="cert-card-item" data-category="ai-iot">
+        <div class="cert-card-header">
+          <div class="cert-icon-wrap blue">
+            <i class="fa-solid fa-network-wired"></i>
+          </div>
+          <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified</span>
+        </div>
+        <h3 class="cert-card-title">Introduction to IoT and Digital Transformation</h3>
+        <h4 class="cert-card-issuer">Cisco Networking Academy &bull; EdCreate Foundation</h4>
+        <div class="cert-card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 23 Nov 2025</span>
+          <span class="cert-id-tag">Cisco Academy</span>
+        </div>
+        <p class="cert-card-desc">Completed curriculum on connected smart devices, sensor networking, industrial IoT architecture, and digital transformation ecosystems.</p>
+      </div>
+
+      <!-- Cert 3: HackerRank SQL Intermediate (NEW) -->
+      <div class="cert-card-item" data-category="software">
+        <div class="cert-card-header">
+          <div class="cert-icon-wrap green">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified</span>
+        </div>
+        <h3 class="cert-card-title">SQL (Intermediate) Skill Certification</h3>
+        <h4 class="cert-card-issuer">HackerRank</h4>
+        <div class="cert-card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 19 Aug 2026</span>
+          <span class="cert-id-tag">ID: 1512C813DBF2</span>
+        </div>
+        <p class="cert-card-desc">Demonstrated proficiency in complex SQL joins, subqueries, relational aggregation, indexing, and high-performance database querying.</p>
+      </div>
+
+      <!-- Cert 4: GUVI Java -->
+      <div class="cert-card-item" data-category="software">
+        <div class="cert-card-header">
+          <div class="cert-icon-wrap orange">
+            <i class="fa-brands fa-java"></i>
+          </div>
+          <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified</span>
+        </div>
+        <h3 class="cert-card-title">Java Programming Certification</h3>
+        <h4 class="cert-card-issuer">GUVI | HCL</h4>
+        <div class="cert-card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 2024</span>
+          <span class="cert-id-tag">GUVI HCL</span>
+        </div>
+        <p class="cert-card-desc">Comprehensive certification in Core Java, object-oriented principles, exception handling, multithreading, and algorithmic logic.</p>
+      </div>
+
+      <!-- Cert 5: Infosys Springboard AI -->
+      <div class="cert-card-item" data-category="ai-iot">
+        <div class="cert-card-header">
+          <div class="cert-icon-wrap purple">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified</span>
+        </div>
+        <h3 class="cert-card-title">Artificial Intelligence Certification</h3>
+        <h4 class="cert-card-issuer">Infosys Springboard</h4>
+        <div class="cert-card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 2025</span>
+          <span class="cert-id-tag">Infosys</span>
+        </div>
+        <p class="cert-card-desc">Mastered foundational AI concepts, intelligent agent workflows, predictive modeling foundations, and ethical machine learning.</p>
+      </div>
+
+      <!-- Cert 6: Maven Silicon VLSI -->
+      <div class="cert-card-item" data-category="hardware">
+        <div class="cert-card-header">
+          <div class="cert-icon-wrap pink">
+            <i class="fa-solid fa-memory"></i>
+          </div>
+          <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified</span>
+        </div>
+        <h3 class="cert-card-title">VLSI Chip Design Certification</h3>
+        <h4 class="cert-card-issuer">Maven Silicon</h4>
+        <div class="cert-card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 2026</span>
+          <span class="cert-id-tag">Maven Silicon</span>
+        </div>
+        <p class="cert-card-desc">Specialized training in semiconductor workflows, digital logic synthesis, RTL design, and Verilog HDL chip simulation.</p>
+      </div>
     </div>
   </section>
 
   <!-- ================= CONTACT SECTION ================= -->
   <section class="contact" id="contact">
     <h2 class="heading">Contact <span>Me!</span></h2>
+    <p class="section-intro">Have an opportunity, technical question, or collaboration in mind? Send a message directly.</p>
 
     <form class="contact-form" id="contactForm">
       <div class="input-box">
@@ -280,11 +416,11 @@
       </div>
 
       <div class="input-box">
-        <input type="tel" id="userPhone" name="phone" placeholder="Mobile Number">
-        <input type="text" id="subject" name="subject" placeholder="Email Subject" required>
+        <input type="tel" id="userPhone" name="phone" placeholder="Mobile Number (+91...)">
+        <input type="text" id="subject" name="subject" placeholder="Subject" required>
       </div>
 
-      <textarea id="message" name="message" cols="30" rows="8" placeholder="Your Message" required></textarea>
+      <textarea id="message" name="message" cols="30" rows="7" placeholder="Your Message" required></textarea>
 
       <button type="submit" class="btn"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
     </form>
@@ -336,7 +472,7 @@
       <div class="modal-section">
         <h3><i class="fa-solid fa-user"></i> Professional Profile</h3>
         <p>
-          Self-motivated Electronics and Communication Engineering undergraduate at VSB Engineering College with strong competencies in Java development, object-oriented principles, relational databases (MySQL), and hardware-level IoT and VLSI Chip Design.
+          Electronics and Communication Engineering undergraduate at VSB Engineering College with strong competencies in Java development, object-oriented design, SQL relational databases, and hardware intelligence across Embedded Systems, IoT Flow Automation, and VLSI Chip Design.
         </p>
       </div>
 
@@ -344,30 +480,33 @@
         <h3><i class="fa-solid fa-code"></i> Technical Matrix</h3>
         <div class="modal-tags">
           <span class="tag">Java (Proficient)</span>
-          <span class="tag">HTML5 &amp; CSS3</span>
-          <span class="tag">MySQL</span>
-          <span class="tag">VLSI Chip Design</span>
+          <span class="tag">SQL / MySQL (Intermediate)</span>
           <span class="tag">Embedded Systems</span>
-          <span class="tag">IoT Flow Sensors</span>
+          <span class="tag">IoT &amp; Flow Automation</span>
+          <span class="tag">VLSI Chip Design</span>
           <span class="tag">EV BMS &amp; Regenerative Charging</span>
+          <span class="tag">HTML5 &amp; CSS3</span>
         </div>
       </div>
 
       <div class="modal-section">
-        <h3><i class="fa-solid fa-certificate"></i> Verified Industry Credentials</h3>
+        <h3><i class="fa-solid fa-certificate"></i> Verified Industry Credentials (6)</h3>
         <ul class="modal-features-list">
-          <li><strong>Java Programming</strong> – GUVI | HCL (2024)</li>
-          <li><strong>Artificial Intelligence</strong> – Infosys Springboard (2025)</li>
-          <li><strong>VLSI Chip Design</strong> – Maven Silicon (2026)</li>
+          <li><strong>Embedded System Design - Overview</strong> &ndash; Maven Silicon (2026 | MSUID: 9921068560)</li>
+          <li><strong>Introduction to IoT &amp; Digital Transformation</strong> &ndash; Cisco Networking Academy &bull; EdCreate (2025)</li>
+          <li><strong>SQL (Intermediate) Certification</strong> &ndash; HackerRank (2026 | ID: 1512C813DBF2)</li>
+          <li><strong>Java Programming Certification</strong> &ndash; GUVI | HCL (2024)</li>
+          <li><strong>Artificial Intelligence Certification</strong> &ndash; Infosys Springboard (2025)</li>
+          <li><strong>VLSI Chip Design Certification</strong> &ndash; Maven Silicon (2026)</li>
         </ul>
       </div>
 
       <div class="modal-section">
         <h3><i class="fa-solid fa-graduation-cap"></i> Academics</h3>
         <ul class="modal-features-list">
-          <li><strong>B.E. ECE</strong> – VSB Engineering College, Karur (2023–Present) &bull; CGPA: 7.6</li>
-          <li><strong>HSC</strong> – Marutham Matric Hr. Sec. School (2023) &bull; 76.1%</li>
-          <li><strong>SSLC</strong> – Marutham Matric Hr. Sec. School (2021) &bull; Pass</li>
+          <li><strong>B.E. ECE</strong> &ndash; VSB Engineering College, Karur (2023&ndash;Present) &bull; CGPA: 7.6</li>
+          <li><strong>HSC</strong> &ndash; Marutham Matric Hr. Sec. School (2023) &bull; 76.1%</li>
+          <li><strong>SSLC</strong> &ndash; Marutham Matric Hr. Sec. School (2021) &bull; Pass</li>
         </ul>
       </div>
 
@@ -383,9 +522,6 @@
     <i class="fa-solid fa-circle-check"></i>
     <span>Message dispatched successfully!</span>
   </div>
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <!-- Main JavaScript -->
   <script src="script.js"></script>
