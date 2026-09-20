@@ -122,7 +122,7 @@ Status: Actively seeking Software Development & Engineering Opportunities
 
 ### 🏆 Verified Industry Credentials (6)
 
-| Credential | Issuing Organization | Year / ID | Focus Area |
+| Credential | Issuing Organization | Year  | Focus Area |
 | :--- | :--- | :---: | :--- |
 | ⚡ **Embedded System Design - Overview** | **Maven Silicon** &bull; Centre of Excellence in Semicon | 2026 <br>  | Microcontroller Interfacing, Firmware, Embedded C & RISC-V |
 | 🌐 **Introduction to IoT & Digital Transformation** | **Cisco Networking Academy** &bull; EdCreate Foundation | 2025 | Industrial IoT Architecture, Connected Sensors & Networks |
