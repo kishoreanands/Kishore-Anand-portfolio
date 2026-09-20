@@ -1751,3 +1751,96 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* ==========================================================================
+   Print / PDF Styles for Profile Summary
+   ========================================================================== */
+@media print {
+  /* Hide page background, canvas, navbar and other sections */
+  #particle-canvas,
+  .cyber-grid-overlay,
+  .scroll-progress-container,
+  .navbar,
+  .hero,
+  #about,
+  #skills,
+  #projects,
+  #stats,
+  #education,
+  #certifications,
+  #contact,
+  .footer,
+  #backToTop,
+  #projectModal,
+  .modal-close-btn,
+  .profile-modal-actions,
+  .toast-notification {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  #profileModal {
+    position: static !important;
+    display: block !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .profile-modal-card {
+    border: 1px solid #e5e7eb !important;
+    background: #ffffff !important;
+    color: #1f2937 !important;
+    box-shadow: none !important;
+    padding: 20px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .modal-title,
+  .gradient-text {
+    -webkit-text-fill-color: #111827 !important;
+    color: #111827 !important;
+  }
+
+  .tech-tag {
+    background: #f3f4f6 !important;
+    color: #1f2937 !important;
+    border: 1px solid #d1d5db !important;
+  }
+
+  .profile-modal-avatar {
+    border-color: #0284c7 !important;
+    box-shadow: none !important;
+  }
+
+  .profile-modal-meta span {
+    color: #4b5563 !important;
+  }
+
+  .modal-body-section h4 {
+    color: #111827 !important;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 4px;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .modal-body-section p,
+  .modal-feature-list li {
+    color: #374151 !important;
+  }
+
+  .modal-feature-list li i {
+    color: #0284c7 !important;
+  }
+}
+
+
